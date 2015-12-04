@@ -12,4 +12,8 @@ Giải pháp: Convert stream từ stdin sử dụng hàm iter:
 
 Xem thêm tại: [How to read a CSV file from a stream and process each line as it is written?](http://stackoverflow.com/questions/6556078/how-to-read-a-csv-file-from-a-stream-and-process-each-line-as-it-is-written) trên stackoverflow.com
 
+## Cài đặt python module
+- [https://docs.python.org/2/install/](https://docs.python.org/2/install/).
+- [http://python-packaging-user-guide.readthedocs.org/en/latest/installing/#installing-from-pypi](http://python-packaging-user-guide.readthedocs.org/en/latest/installing/#installing-from-pypi).
+
 
