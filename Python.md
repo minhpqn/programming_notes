@@ -1,6 +1,42 @@
 # Python Notes
 Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
+## Khắc phục lỗi IOError: [Errno 32] Broken pipe
+Khi sử dụng pipeline với python trên Linux ta hay gặp lỗi đó. Ví dụ trích ra các dòng đầu của đầu ra của một chương trình Python. Để khắc phục ta thêm vào khai báo sau đây:
+
+```
+from signal import signal, SIGPIPE, SIG_DFL
+signal(SIGPIPE,SIG_DFL) 
+```
+Tham khảo tại [http://stackoverflow.com/questions/14207708/ioerror-errno-32-broken-pipe-python](http://stackoverflow.com/questions/14207708/ioerror-errno-32-broken-pipe-python).
+
+## Câu lệnh tương tự với grep trong Perl
+Muốn chọn ra các phần tử trong danh sách (list) thoả mãn một tiêu chí nào đó thì dùng lệnh nào?
+
+Sử dụng hàm filter. Xem ví dụ sau đây:
+
+```
+>>> fib = [0,1,1,2,3,5,8,13,21,34,55]
+>>> result = filter(lambda x: x % 2, fib)
+>>> print result
+[1, 1, 3, 5, 13, 21, 55]
+>>> result = filter(lambda x: x % 2 == 0, fib)
+>>> print result
+[0, 2, 8, 34]
+>>> 
+```
+
+## Vẽ đồ thị dạng thanh với Python (Bar chart)
+Tham khảo: [http://matplotlib.org/examples/pylab_examples/barchart_demo.html](http://matplotlib.org/examples/pylab_examples/barchart_demo.html)
+
+## Chuyển một xâu ký tự sang dạng mã hoá utf-8
+```
+a_string='Xâu ký tự'
+utf8_string = unicode(a_string, 'utf-8')
+```
+
+Tham khảo: [python: how to convert a string to utf-8](http://stackoverflow.com/questions/4182603/python-how-to-convert-a-string-to-utf-8)
+
 ## Sắp xếp các khoá trong một hash map
 Sắp xếp theo khoá:
 ```
@@ -8,6 +44,7 @@ sorted( a.keys() )
 ```
 
 Sắp xếp theo giá trị: Giả sử có một đối tượng kiểu dict, các giá trị là các giá trị số thực. Ta muốn sắp xếp các khoá theo thứ giảm dần của các giá trị. Giải pháp là dùng hàm sorted với tuỳ chọn key=
+
 ```
 a = {}
 a[1] = 3
@@ -16,7 +53,6 @@ a[3] = 4
 a[4] = 8
 sorted( a.keys(), key = lambda x:, a[x], reverse = True )
 ```
-
 
 ## Array sclice trong python
 Sử dụng ```list[start_index:end_index]```. Chú ý là mảng thu được không bao gồm phần tử ở vị trí end_index.
