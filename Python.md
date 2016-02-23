@@ -1,6 +1,20 @@
 # Python Notes
 Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
+## Tìm kiếm các lệnh đã thực hiện trong history của ipython
+
+```
+[l for l in  _ih if l.startswith('plot')]
+```
+
+## Tài liệu tham khảo về phong cách viết code trong Python
+
+- [The Elements of Python Style](https://github.com/amontalenti/elements-of-python-style), by amontalenti. 
+- [PEP 20 -- The Zen of Python](https://www.python.org/dev/peps/pep-0020/).
+- [Flake8](https://flake8.readthedocs.org/en/latest/).
+- [PEP 0008 -- Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/).
+- [Transforming Code into Beautiful, Idiomatic Python](https://www.youtube.com/watch?v=OSGv2VnC0go), Youtube video by Raymond Hettinger.
+
 ## Khắc phục lỗi IOError: [Errno 32] Broken pipe
 Khi sử dụng pipeline với python trên Linux ta hay gặp lỗi đó. Ví dụ trích ra các dòng đầu của đầu ra của một chương trình Python. Để khắc phục ta thêm vào khai báo sau đây:
 
