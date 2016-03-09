@@ -1,6 +1,207 @@
 # Python Notes
 Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
+Tác giả: Phạm Quang Nhật Minh
+
+## Tài liệu tham khảo: numpy cho matlab users
+
+- [NumPy for MATLAB users](http://mathesaurus.sourceforge.net/matlab-numpy.html)
+- [Numpy for Matlab users trên docs.scipy.org)](https://docs.scipy.org/doc/numpy-dev/user/numpy-for-matlab-users.html)
+
+## Câu lệnh tương đương với lệnh find() trong matlab
+
+```
+a = np.array([1, 3, -1, 0.5, 0.3, 10])
+(a > 0.5).nonzero()
+Out[26]: (array([0, 1, 5]),)
+a[ (a > 0.5).nonzero() ]
+Out[27]: array([  1.,   3.,  10.])
+```
+
+## Sắp xếp mảng, trả về indices ban đầu của các phần tử trong mảng đã sắp xếp
+
+```
+>>> s = [2, 3, 1, 4, 5]
+>>> sorted(range(len(s)), key=lambda k: s[k])
+[2, 0, 1, 3, 4]
+>>> 
+```
+
+Với Python numpy ta có thể dùng hàm ```numpy.argsort```
+
+## Split tại ký tự phân tách đầu tiên
+
+Dùng hàm ```str.split([sep[,maxsplit]])```
+
+```
+str.split(' ', 1)
+```
+
+## Dùng *args và **kargs để unpack variables khi định nghĩa hàm
+
+Xem thêm [http://agiliq.com/blog/2012/06/understanding-args-and-kwargs/](http://agiliq.com/blog/2012/06/understanding-args-and-kwargs/)
+
+## Logical Functions trong python numpy
+
+Tham khảo [http://docs.scipy.org/doc/numpy/reference/routines.logic.html](http://docs.scipy.org/doc/numpy/reference/routines.logic.html)
+
+## Tính pdf của multivariate Gaussian Distribution
+
+Dùng thư viện (Tham khảo: [http://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.stats.multivariate_normal.html](http://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.stats.multivariate_normal.html))
+
+```
+from scipy.stats import multivariate_normal
+p = multivariate_normal.pdf(X, mean=mu, cov=Sigma2)
+```
+
+## Tìm indices của các phần tử thoả mãn điều kiện cho trước trong một mảng
+
+```
+# use list comprehension
+[i for i in xrange(len(arr)) if sastified(arr[i]) ]
+```
+
+## Về cú pháp numpy.r_
+
+[Understanding the syntax of numpy.r_() concatenation](http://stackoverflow.com/questions/14468158/understanding-the-syntax-of-numpy-r-concatenation)
+
+'n,m' tells r_ to concatenate along axis=n, and produce a shape with at least m dimensions:
+
+```
+In [28]: np.r_['0,2', [1,2,3], [4,5,6]]
+Out[28]: 
+array([[1, 2, 3],
+       [4, 5, 6]])
+```
+
+Xem thêm [http://docs.scipy.org/doc/numpy-1.6.0/reference/generated/numpy.r\_.html](http://docs.scipy.org/doc/numpy-1.6.0/reference/generated/numpy.r_.html)
+
+## Thao tác Selection/Slice trong numpy.ndarray
+
+```
+import numpy as np
+a = np.array( range(1,11) ).reshape(2,5)
+a[:, 2:]
+```
+
+## Truy cập một cột của numpy array
+
+```
+import numpy as np
+a = np.array([ [1, 2, 3], [4, 5, 6], [7, 8, 9] ])
+# Truy cập cột thứ 2 của a
+a[:,[2]]
+```
+
+## Tính tổng theo các cột của numpy array
+
+```
+a = np.array([[1, 2], [3,4], [5,6]])
+np.sum(a, axis=1)
+Out[137]: array([ 3,  7, 11])
+```
+
+## Tài liệu tham khảo về ipython
+
+- [IPython's Rich Display System](http://nbviewer.jupyter.org/github/ipython/ipython/blob/1.x/examples/notebooks/Part%205%20-%20Rich%20Display%20System.ipynb)
+- [Ipython Notebooks Examples](http://nbviewer.jupyter.org/github/ipython/ipython/tree/1.x/examples/notebooks/)
+
+## Rank của array trong Python numpy
+Là số chiều của array.
+
+```
+import numpy as np
+a = np.array([1, 2, 3])  # Create a rank 1 array
+print type(a), a.shape, a[0], a[1], a[2]
+a[0] = 5                 # Change an element of the array
+print a   
+```
+
+## Kỹ thuật broadcasting 
+
+Được dùng khi thực hiện phép tính giữa hai mảng: 1 mảng với kích thước lớn và một mảng khác với kích thước nhỏ hơn.
+
+```
+import numpy as np
+# We will add the vector v to each row of the matrix x,
+# storing the result in the matrix y
+x = np.array([[1,2,3], [4,5,6], [7,8,9], [10, 11, 12]])
+v = np.array([1, 0, 1])
+y = x + v  # Add v to each row of x using broadcasting
+print y
+```
+
+## Chú ý khi slice một mảng trong numpy
+Thay đổi giá trị của sliced array sẽ thay đổi giá trị của mảng gốc.
+
+```
+a = np.array([[1,2,3,4], [5,6,7,8], [9,10,11,12]])
+print a[0, 1]  
+b[0, 0] = 77    # b[0, 0] is the same piece of data as a[0, 1]
+print a[0, 1] 
+```
+
+## Tạo mảng với các số ngẫu nhiên trong Python numpy
+
+```
+import numpy as np
+
+e = np.random.random((2,2)) # Create an array filled with random values
+print e
+```
+
+## Set comprehension
+Tương tự như dictionary comprehension, ta có thể làm như sau:
+
+```
+from math import sqrt
+print {int(sqrt(x)) for x in range(30)}
+```
+
+
+## Dictionary comprehension
+
+Rất tiện khi tạo dictionary.
+
+```
+nums = [0, 1, 2, 3, 4]
+even_num_to_square = {x: x ** 2 for x in nums if x % 2 == 0}
+print even_num_to_square
+```
+
+## Truy cập key, value khi duyệt dictionary
+Sử dụng hàm iteritems.
+
+```
+d = {'person': 2, 'cat': 4, 'spider': 8}
+for animal, legs in d.iteritems():
+    print 'A %s has %d legs' % (animal, legs)
+```
+
+## Nên sử dụng list comprehension nhiều hơn thay vì sử dụng map, filter, lambda
+
+```
+nums = [0, 1, 2, 3, 4]
+squares = [x ** 2 for x in nums]
+print squares
+```
+
+List comprehension với cấu trúc điều kiện.
+
+```
+nums = [0, 1, 2, 3, 4]
+even_squares = [x ** 2 for x in nums if x % 2 == 0]
+print even_squares
+```
+
+## Duyệt mảng đồng thời truy cập index của các phần tử
+
+```
+animals = ['cat', 'dog', 'monkey']
+for idx, animal in enumerate(animals):
+    print '#%d: %s' % (idx + 1, animal)
+```
+
 ## Tìm kiếm các lệnh đã thực hiện trong history của ipython
 
 ```
