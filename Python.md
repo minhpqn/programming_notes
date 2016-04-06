@@ -3,6 +3,104 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Tạo regular expression từ một string
+
+
+## Iterating Over Arrays
+
+Tham khảo [http://docs.scipy.org/doc/numpy/reference/arrays.nditer.html](http://docs.scipy.org/doc/numpy/reference/arrays.nditer.html)
+
+## Tính tổng các phần tử theo hàng/cột của ma trận với python numpy
+
+```
+x = np.array([[1001,1002],[3,4]])
+# Tính tổng các phần tử trên mỗi hàng của ma trận 
+np.sum(x, axis=1)
+>> array([2003,    7])
+# Tính tổng các phần tử trên các cột của ma trận 
+np.sum(x, axis=0)
+>> array([1004, 1006])
+```
+
+## Sự khác nhau giữa () và [] trong list comprehension 
+
+() sẽ tạo ra ```generator``` trong khi [] sẽ tạo ra một ```list```. Tuỳ theo nhu cầu sử dụng mà ta có thể chọn () hoặc [].
+
+## Một cách vận dụng defaultdict và generator rất hay mà mình cần học tập
+
+```
+from collections import defaultdict
+
+sentences = ['the king loves the queen', 'the queen loves the king',
+             'the dwarf hates the king', 'the queen hates the dwarf',
+             'the dwarf poisons the king', 'the dwarf poisons the queen']
+
+def Vocabulary():
+    dictionary = defaultdict()
+    dictionary.default_factory = lambda: len(dictionary)
+    return dictionary
+
+def docs2bow(docs, dictionary):
+    """Transforms a list of strings into a list of lists 
+    where each unique item is converted into a unique 
+    integer.
+    """
+    for doc in docs:
+        yield [dictionary[word] for word in doc.split()]
+
+vocabulary = Vocabulary()
+sentences_bow = list(docs2bow(sentences, vocabulary))
+```
+
+Trong hàm ```docs2bow```, mỗi khi gọi ```dictionary[word]```, default_factory sẽ tự động gán giá trị cho khoá trong biến ```word``` là kích thước của ```dict``` hiện tại.
+
+
+## Về defaultdict và default factory trong python
+
+Ví dụ khi kiểu giá trị mặc định là ```list```
+
+```
+from collections import defaultdict
+cities_by_state = defaultdict(list)
+```
+
+Trong Perl thì không cần một lớp riêng vì Perl sẽ tự động định kiểu khi giá trị được gán.
+
+Tham khảo [https://www.accelebrate.com/blog/using-defaultdict-python/](https://www.accelebrate.com/blog/using-defaultdict-python/)
+
+## Giải thích dễ hiểu về generator trong python
+
+[Improve Your Python: 'yield' and Generators Explained](https://jeffknupp.com/blog/2013/04/07/improve-your-python-yield-and-generators-explained/).
+
+Take-away points:
+
+- ```generators``` are used to generate a series of values
+yield is like the return of generator functions
+- The only other thing yield does is save the "state" of a generator function
+- A generator is just a special type of iterator
+- Like iterators, we can get the next value from a generator using next()
+    * for gets values by calling next() implicitly
+
+## Cài đặt một package mới với conda
+
+Ví dụ: lệnh sau sẽ cài đặt seaborn với conda:
+
+```
+conda install seaborn
+# list packages in the current environment
+conda list
+```
+
+Tham khảo: [http://conda.pydata.org/docs/using/pkgs.html](http://conda.pydata.org/docs/using/pkgs.html)
+
+## Quản lý Python version với conda
+
+Tham khảo: [http://conda.pydata.org/docs/py2or3.html](http://conda.pydata.org/docs/py2or3.html)
+
+## Quản lý environments với conda 
+
+Tham khảo tại: [http://conda.pydata.org/docs/using/envs.html](http://conda.pydata.org/docs/using/envs.html)
+
 ## Tài liệu tham khảo: numpy cho matlab users
 
 - [NumPy for MATLAB users](http://mathesaurus.sourceforge.net/matlab-numpy.html)
