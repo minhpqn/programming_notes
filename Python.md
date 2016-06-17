@@ -3,8 +3,47 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
-## Tạo regular expression từ một string
+## Try catch trong Python
 
+```
+try:
+  # process here
+except Exception:
+  # process here
+```
+
+## Import Python module from subdirectory
+
+Assume we need to import the module ```article.py``` in ```./lib``` Use the following.
+
+```
+import sys
+sys.path.append('./lib')
+```
+
+## Xử lý file XML với Python
+
+Ví dụ bài 54 trong "100 NLP Drill Exercises".
+
+```
+from xml.dom import minidom
+xmldoc = minidom.parse('../../data/nlp.txt.xml')
+token_list = xmldoc.getElementsByTagName('token')
+for tknode in token_list:
+    info = []
+    for tag in ['word', 'lemma', 'POS']:
+        node = tknode.getElementsByTagName(tag)
+        info.append(node[0].firstChild.data)
+    print '\t'.join(info)
+```
+
+## Đọc vào từ stdin
+
+```
+for line in sys.stdin:
+    line = line.strip()
+    print line
+```
 
 ## Iterating Over Arrays
 
@@ -256,7 +295,6 @@ from math import sqrt
 print {int(sqrt(x)) for x in range(30)}
 ```
 
-
 ## Dictionary comprehension
 
 Rất tiện khi tạo dictionary.
@@ -364,7 +402,7 @@ a[1] = 3
 a[2] = 6
 a[3] = 4
 a[4] = 8
-sorted( a.keys(), key = lambda x:, a[x], reverse = True )
+sorted( a.keys(), key = lambda x: a[x], reverse = True )
 ```
 
 ## Array sclice trong python

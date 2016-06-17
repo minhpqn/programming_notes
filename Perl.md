@@ -1,6 +1,10 @@
 # Perl Notes
 Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Perl.
 
+## Array slicing
+
+Reference: [http://perldoc.perl.org/perldata.html#Slices](http://perldoc.perl.org/perldata.html#Slices).
+
 ## Scan tất cả các vị trí trong xâu ký tự match với một regular expression
 Sử dụng /g modifier và vòng lặp while để duyệt.
 

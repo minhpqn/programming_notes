@@ -1,5 +1,14 @@
 # Shell script notes
 
+## Vòng lặp for trong shell script
+
+```
+for var in 0 1 2 3 4 5 6 7 8 9
+do
+   echo $var
+done
+```
+
 ## Kiểm tra số lượng đầu vào của một shell script
 
 ```shell
