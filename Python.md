@@ -3,6 +3,29 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Convert notebooks thành các định dạng khác nhau
+
+```
+# Chuyển sang HTML
+ipython nbconvert --to html notebook.ipynb
+```
+
+Tham khảo [Converting notebooks to other formats](https://ipython.org/ipython-doc/1/interactive/nbconvert.html)
+
+## Directory listing in Python
+
+Sử dụng os.listdir()
+
+```
+from os import listdir
+from os.path import isfile, join
+onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
+```
+
+## iPython Notebook Keyboard Shortcuts
+
+Reference: [iPython Notebook Keyboard Shortcuts](http://johnlaudun.org/20131228-ipython-notebook-keyboard-shortcuts/).
+
 ## Try catch trong Python
 
 ```
@@ -416,6 +439,7 @@ Vấn đề: muốn map các phần tử trong mảng bằng một hàm số tr�
 Tham khảo: [http://www.python-course.eu/lambda.php](http://www.python-course.eu/lambda.php).
 
 ## In một dòng không có ký tự xuống dòng
+
 Yêu cầu: In ra một dòng không có ký tự xuống dòng.
 ```sys.stdout.write('Xâu ký tự')```
 
