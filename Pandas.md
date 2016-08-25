@@ -3,6 +3,20 @@
 
 Ghi chép cá nhân khi học, sử dụng Pandas cho xử lý dữ liệu.
 
+
+
+## Thay đổi giá trị NaN trong pandas
+
+Fill các giá trị Null cho một số columns.
+
+```
+cols = ['Suddenly_breaking_Flag', 'Harsh_acceleration_Flag',
+        'Quick_Changes_in_right', 'Quick_Changes_in_left', 'Shock_Flag',
+        'bCall_Flag', 'eCall_Flag']
+for col in cols:
+    df.ix[pd.isnull(df[col]), col] = 0
+```
+
 ## Bỏ các cột trong pandas
 
 Sử dụng hàm ```drop```.
