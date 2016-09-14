@@ -1,9 +1,10 @@
 # Sử dụng Pandas cho xử lý dữ liệu
-==================================
 
 Ghi chép cá nhân khi học, sử dụng Pandas cho xử lý dữ liệu.
 
+## CheatSheet: Data Exploration using Pandas in Python
 
+Tham khảo tại [đây](https://www.analyticsvidhya.com/blog/2015/07/11-steps-perform-data-analysis-pandas-python).
 
 ## Thay đổi giá trị NaN trong pandas
 

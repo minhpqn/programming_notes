@@ -1,5 +1,11 @@
 # Shell script notes
 
+## Lấy thư mục hiện tại
+
+```
+cur_dir=`cd $(dirname $0) && pwd`
+```
+
 ## Vòng lặp for trong shell script
 
 ```

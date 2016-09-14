@@ -3,6 +3,27 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Get all content of a file
+
+```
+with open(fname) as f:
+    content = f.readlines()
+```
+
+## Open a file to write
+
+```
+f = open('/tmp/spam', 'w')
+f.write(S)
+```
+
+## Get basename of a file path
+
+```
+os.path.basename(path)
+os.path.splitext('path_to_file')[0]
+```
+
 ## Convert notebooks thành các định dạng khác nhau
 
 ```
@@ -92,16 +113,13 @@ np.sum(x, axis=0)
 
 ```
 from collections import defaultdict
-
 sentences = ['the king loves the queen', 'the queen loves the king',
              'the dwarf hates the king', 'the queen hates the dwarf',
              'the dwarf poisons the king', 'the dwarf poisons the queen']
-
 def Vocabulary():
     dictionary = defaultdict()
     dictionary.default_factory = lambda: len(dictionary)
     return dictionary
-
 def docs2bow(docs, dictionary):
     """Transforms a list of strings into a list of lists 
     where each unique item is converted into a unique 
@@ -109,7 +127,6 @@ def docs2bow(docs, dictionary):
     """
     for doc in docs:
         yield [dictionary[word] for word in doc.split()]
-
 vocabulary = Vocabulary()
 sentences_bow = list(docs2bow(sentences, vocabulary))
 ```
@@ -465,14 +482,17 @@ f.close()
 Trong đó 'r' có nghĩa là mở file để đọc, 'U' là tuỳ chọn để chuyển đổi các dấu kết thức dòng thành '\n'.
 
 ## Kiểm tra xem 1 đường dẫn có phải là 1 thư mục hay không?
+
 Sử dụng os.path.isdir(filename) trong module os của Python. Kiểm tra 1 đường dẫn có phải là 1 file hay không thì sử dụng os.path.isfile(filename).
 
 ## Xử lý đầu vào từ dòng lệnh trong Python
+
 Mảng lưu trữ đầu vào từ dòng lệnh trong Python. Tham khảo tại đây: [http://www.diveintopython.net/scripts_and_streams/command_line_arguments.html](http://www.diveintopython.net/scripts_and_streams/command_line_arguments.html)
 
 Python sẽ lưu trữ danh sách các đối dòng lệnh trong mảng ```sys.argv```. Lưu ý là danh sách này bao gồm cả tên của python script.
 
 ## Duyệt các số từ N đến 1 theo thứ tự giảm dần
+
 Yêu cầu là duyệt các số từ N đến 1 theo thứ tự N, N-1, N-2,...,1.
 
 ```
