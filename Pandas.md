@@ -2,6 +2,15 @@
 
 Ghi chép cá nhân khi học, sử dụng Pandas cho xử lý dữ liệu.
 
+## Select some specific columns in a data frame using indexes
+
+Use ```iloc```.
+
+```
+df.iloc[:,2]
+df.iloc[:,1:3]
+```
+
 ## CheatSheet: Data Exploration using Pandas in Python
 
 Tham khảo tại [đây](https://www.analyticsvidhya.com/blog/2015/07/11-steps-perform-data-analysis-pandas-python).

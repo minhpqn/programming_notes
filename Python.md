@@ -3,6 +3,13 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Replace all tabs with spaces in a string
+
+```
+import re
+re.sub(r"\s+", " ", text)
+```
+
 ## Get all content of a file
 
 ```
