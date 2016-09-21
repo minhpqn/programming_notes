@@ -1,6 +1,6 @@
 # Ghi chép khi làm việc với ngôn ngữ lập trình Prolog
 
-# Tài liệu tham khảo về Prolog
+## Tài liệu tham khảo về Prolog
 
 - [J.R.Fisher Prolog Tutorial](https://www.cpp.edu/~jrfisher/www/prolog_tutorial/contents.html).
 - [Prolog Wikibooks](https://en.wikibooks.org/wiki/Prolog).
