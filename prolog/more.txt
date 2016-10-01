@@ -1,0 +1,16 @@
+[[% check whether X is a member of a list
+member(X, [X | _]).
+member(X, [_ | T]) :- member(X, T).
+
+sorted([]).
+sorted([H|T]) :- H =< T,!.
+sorted([H|T]) :- sorted(T).
+
+check([]) :- write('True'),!.
+check([A]) :- write('True'),!.
+check([A,B]) :- A < B, !.
+check([A,B|T]) :- A >= B, write('False'),!.
+check([A,B|T]) :- check([B|T]).
+
+
+
