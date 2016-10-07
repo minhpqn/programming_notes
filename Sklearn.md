@@ -1,6 +1,13 @@
 # Scikit-learn Notes
 ===========================
 
+## References for ensemble methods with scikit-learn
+
+* [Kaggle Ensembling Guide](http://mlwave.com/kaggle-ensembling-guide/) on MLWave.
+* [StackingClassifier](http://rasbt.github.io/mlxtend/user_guide/classifier/StackingClassifier/), by Rasbt.
+* [MLXtend](https://github.com/rasbt/mlxtend)
+* [Implementing a Weighted Majority Rule Ensemble Classifier](http://sebastianraschka.com/Articles/2014_ensemble_classifier.html), by Sesbastian Raschka.
+
 ## Feature Selection trong scikit-learn
 
 ```
