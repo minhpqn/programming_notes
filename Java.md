@@ -2,7 +2,16 @@
 
 ## Read a text file  line by line
 
-
+```
+try(BufferedReader is = new BufferedReader(new FileReader(fileName))) {
+    String line;
+    while ( (line = is.readLine()) != null ) {
+	      // Statements
+   }
+} catch(IOException e) {
+   e.printStackTrace();
+}
+```
 
 ## Add an element in to a list in Java
 
