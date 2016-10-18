@@ -1,5 +1,11 @@
 # Shell script notes
 
+## Create tar.gz file
+
+```
+tar -cvzf file.tar.gz file_list
+```
+
 ## Lấy thư mục hiện tại
 
 ```

@@ -3,6 +3,26 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Draw graph for sigmoid function
+
+g(z) = 1/( 1 + exp(-z) )
+
+```
+# generate random number from -5 to 5
+import numpy as np
+from matplotlib import pyplot as plt
+z = np.arange(-5., 5., 0.2)
+# calculate g(z)
+y = 1/(1 + np.exp(-z))
+# plot g(z) using matplotlib
+plt.plot(z, y)
+plt.show()
+```
+
+## Change to a directory
+
+Use ```os.chdir(path)```
+
 ## Replace all tabs with spaces in a string
 
 ```
