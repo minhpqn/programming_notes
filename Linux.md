@@ -1,5 +1,14 @@
 # Some notes about using Linux/Unix
 
+## Copy a list of files in a directory
+
+Bài toán: Copy một list các files vào một directory.
+
+```
+a=(*)
+cp -- "${a[@]: -4}" ~/
+```
+
 ## Convert all tabs to spaces in a file
 
 ```

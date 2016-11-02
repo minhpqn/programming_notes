@@ -2,6 +2,10 @@
 
 Ghi chép cá nhân khi học, sử dụng Pandas cho xử lý dữ liệu.
 
+## Select by Boolean indexes
+
+Sử dụng hàm ```loc```.
+
 ## Select some specific columns in a data frame using indexes
 
 Use ```iloc```.
