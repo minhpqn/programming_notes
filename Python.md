@@ -3,6 +3,101 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Python regular expression for email string
+
+```
+r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)"
+```
+
+## Create a list of regular expressions and match in that order
+
+```
+regexes = [
+    # your regexes here
+    re.compile('hi'),
+#    re.compile(...),
+#    re.compile(...),
+#    re.compile(...),
+]
+mystring = 'hi'
+
+if any(regex.match(mystring) for regex in regexes):
+    print 'Some regex matched!'
+```
+
+References: [Python: Elegant way to check if at least one regex in list matches a string](http://stackoverflow.com/questions/3040716/python-elegant-way-to-check-if-at-least-one-regex-in-list-matches-a-string)
+
+## Check if a directory exists or not and create if not existing
+
+```
+import os
+dir = "./data"
+if not os.path.isdir(dir):
+    os.mkdir(dir)
+```
+
+## Write data frame into file csv and html (dạng table)
+
+Sử dụng pandas.DataFrame.to_csv()
+
+## Find out the directory of an input file
+
+Sử dụng "os.path.dirname"
+
+## raw_input() in python3
+
+Đổi thành input() trong python3
+
+## Check blank lines in python
+
+```
+import re
+if re.search(r'^[\s\t]*$', line)
+```
+
+## Shuffle a list in python
+
+Use ```random.shuffle```
+
+## Use nltk to untag
+
+Untag một câu trong đó mỗi từ được gắn với POS Tag. Ví dụ câu sau đây:
+
+The/at Fulton/np-tl County/nn-tl Grand/jj-tl Jury/nn-tl said/vbd Friday/nr an/at investigation/nn of/in Atlanta's/np$ recent/jj primary/nn election/nn produced/vbd \`\`/\`\` no/at evidence/nn ''/'' that/cs any/dti irregularities/nns took/vbd place/nn ./.
+
+```
+from nltk.tag.util import untag
+sen = 'The/at Fulton/np-tl County/nn-tl Grand/jj-tl Jury/nn-tl said/vbd Friday/nr an/at investigation/nn of/in Atlanta's/np$ recent/jj primary/nn election/nn produced/vbd \`\`/\`\` no/at evidence/nn ''/'' that/cs any/dti irregularities/nns took/vbd place/nn ./.'
+tagged_sen = [ pair.split('/') for pair in sen.split()]
+sen = untag(tagged_sen)
+```
+
+
+## How to match any string from a list of strings in regular expressions in python?
+
+```
+string_lst = ['fun', 'dum', 'sun', 'gum']
+x="I love to have fun."
+print re.findall(r"(?=("+'|'.join(string_lst)+r"))",x)
+```
+## Check if a directory exists or not. If it does not exist, create one.
+
+```
+import os
+if not os.path.isdir(dir):
+    os.makedirs(dir)
+```
+
+## Convert a multiple-sheet excel file into multiple csv files
+
+Yêu cầu: Convert mỗi sheet trong file excel thành một file csv.
+
+```
+dfs = pd.read_csv('QuestionSet-FRT-1.xlsx', sheetname = None)
+```
+
+Kết quả trả về của hàm trên là một dictionary của các sheets trong file excel.
+
 ## Draw graph for sigmoid function
 
 g(z) = 1/( 1 + exp(-z) )
@@ -124,15 +219,15 @@ Tham khảo [http://docs.scipy.org/doc/numpy/reference/arrays.nditer.html](http:
 
 ```
 x = np.array([[1001,1002],[3,4]])
-# Tính tổng các phần tử trên mỗi hàng của ma trận 
+# Tính tổng các phần tử trên mỗi hàng của ma trận
 np.sum(x, axis=1)
 >> array([2003,    7])
-# Tính tổng các phần tử trên các cột của ma trận 
+# Tính tổng các phần tử trên các cột của ma trận
 np.sum(x, axis=0)
 >> array([1004, 1006])
 ```
 
-## Sự khác nhau giữa () và [] trong list comprehension 
+## Sự khác nhau giữa () và [] trong list comprehension
 
 () sẽ tạo ra ```generator``` trong khi [] sẽ tạo ra một ```list```. Tuỳ theo nhu cầu sử dụng mà ta có thể chọn () hoặc [].
 
@@ -148,8 +243,8 @@ def Vocabulary():
     dictionary.default_factory = lambda: len(dictionary)
     return dictionary
 def docs2bow(docs, dictionary):
-    """Transforms a list of strings into a list of lists 
-    where each unique item is converted into a unique 
+    """Transforms a list of strings into a list of lists
+    where each unique item is converted into a unique
     integer.
     """
     for doc in docs:
@@ -203,7 +298,7 @@ Tham khảo: [http://conda.pydata.org/docs/using/pkgs.html](http://conda.pydata.
 
 Tham khảo: [http://conda.pydata.org/docs/py2or3.html](http://conda.pydata.org/docs/py2or3.html)
 
-## Quản lý environments với conda 
+## Quản lý environments với conda
 
 Tham khảo tại: [http://conda.pydata.org/docs/using/envs.html](http://conda.pydata.org/docs/using/envs.html)
 
@@ -228,7 +323,7 @@ Out[27]: array([  1.,   3.,  10.])
 >>> s = [2, 3, 1, 4, 5]
 >>> sorted(range(len(s)), key=lambda k: s[k])
 [2, 0, 1, 3, 4]
->>> 
+>>>
 ```
 
 Với Python numpy ta có thể dùng hàm ```numpy.argsort```
@@ -273,7 +368,7 @@ p = multivariate_normal.pdf(X, mean=mu, cov=Sigma2)
 
 ```
 In [28]: np.r_['0,2', [1,2,3], [4,5,6]]
-Out[28]: 
+Out[28]:
 array([[1, 2, 3],
        [4, 5, 6]])
 ```
@@ -321,7 +416,7 @@ a[0] = 5                 # Change an element of the array
 print a   
 ```
 
-## Kỹ thuật broadcasting 
+## Kỹ thuật broadcasting
 
 Được dùng khi thực hiện phép tính giữa hai mảng: 1 mảng với kích thước lớn và một mảng khác với kích thước nhỏ hơn.
 
@@ -342,7 +437,7 @@ Thay đổi giá trị của sliced array sẽ thay đổi giá trị của mả
 a = np.array([[1,2,3,4], [5,6,7,8], [9,10,11,12]])
 print a[0, 1]  
 b[0, 0] = 77    # b[0, 0] is the same piece of data as a[0, 1]
-print a[0, 1] 
+print a[0, 1]
 ```
 
 ## Tạo mảng với các số ngẫu nhiên trong Python numpy
@@ -413,7 +508,7 @@ for idx, animal in enumerate(animals):
 
 ## Tài liệu tham khảo về phong cách viết code trong Python
 
-- [The Elements of Python Style](https://github.com/amontalenti/elements-of-python-style), by amontalenti. 
+- [The Elements of Python Style](https://github.com/amontalenti/elements-of-python-style), by amontalenti.
 - [PEP 20 -- The Zen of Python](https://www.python.org/dev/peps/pep-0020/).
 - [Flake8](https://flake8.readthedocs.org/en/latest/).
 - [PEP 0008 -- Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/).
@@ -424,7 +519,7 @@ Khi sử dụng pipeline với python trên Linux ta hay gặp lỗi đó. Ví d
 
 ```
 from signal import signal, SIGPIPE, SIG_DFL
-signal(SIGPIPE,SIG_DFL) 
+signal(SIGPIPE,SIG_DFL)
 ```
 Tham khảo tại [http://stackoverflow.com/questions/14207708/ioerror-errno-32-broken-pipe-python](http://stackoverflow.com/questions/14207708/ioerror-errno-32-broken-pipe-python).
 
@@ -441,7 +536,7 @@ Sử dụng hàm filter. Xem ví dụ sau đây:
 >>> result = filter(lambda x: x % 2 == 0, fib)
 >>> print result
 [0, 2, 8, 34]
->>> 
+>>>
 ```
 
 ## Vẽ đồ thị dạng thanh với Python (Bar chart)
@@ -548,5 +643,3 @@ Xem thêm tại: [How to read a CSV file from a stream and process each line as 
 ## Cài đặt python module
 - [https://docs.python.org/2/install/](https://docs.python.org/2/install/).
 - [http://python-packaging-user-guide.readthedocs.org/en/latest/installing/#installing-from-pypi](http://python-packaging-user-guide.readthedocs.org/en/latest/installing/#installing-from-pypi).
-
-

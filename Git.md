@@ -1,6 +1,13 @@
 # Git Notes
 Những ghi chép cá nhân khi sử dụng và học cách sử dụng Git cho các projects
 
+#### Determine the URL that a local Git repository was originally cloned from
+
+```
+git config --get remote.origin.url
+git remote show origin
+```
+
 #### Thay đổi remote's URL
 Sử dụng lệnh:
 

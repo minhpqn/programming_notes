@@ -1,6 +1,25 @@
 # Scikit-learn Notes
 ===========================
 
+## model_selection in scikit-learn version 0.18
+
+Từ version 0.20, module này sẽ bị remove.
+
+/Users/minhpham/anaconda/lib/python3.5/site-packages/sklearn/cross_validation.py:44: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
+  "This module will be removed in 0.20.", DeprecationWarning)
+
+## Split data into training & test data
+
+Use the function ```train_test_split``` in ```model_selection```.
+
+Reference: [http://scikit-learn.org/stable/modules/classes.html#module-sklearn.model_selection](http://scikit-learn.org/stable/modules/classes.html#module-sklearn.model_selection).
+
+```
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(
+                                      X, y, test_size=0.33, random_state=42)
+```
+
 ## References for ensemble methods with scikit-learn
 
 * [Kaggle Ensembling Guide](http://mlwave.com/kaggle-ensembling-guide/) on MLWave.

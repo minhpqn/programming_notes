@@ -1,5 +1,19 @@
 # Some notes about using Linux/Unix
 
+## Create a new user account on *NIX 
+
+Tham khảo
+
+- [https://www.cyberciti.biz/faq/unix-create-user-account/](https://www.cyberciti.biz/faq/unix-create-user-account/)
+- [Unix - User Administration](https://www.tutorialspoint.com/unix/unix-user-administration.htm)
+
+## Convert markdown file into pdf file
+
+    pandoc MANUAL.txt --latex-engine=xelatex -o example13.pdf
+    pandoc -s -o doc.pdf doc.md
+
+Tham khảo: [http://pandoc.org/demos.html](http://pandoc.org/demos.html)
+
 ## Copy a list of files in a directory
 
 Bài toán: Copy một list các files vào một directory.
