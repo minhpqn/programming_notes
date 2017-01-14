@@ -1,0 +1,17 @@
+A A 21
+A B 12
+A C 0
+A D 9
+B A 4
+B B 17
+B C 1
+B D 0
+C A 3
+C B 9
+C C 15
+C D 2
+D A 0
+D B 0
+D C 0
+D D 1
+

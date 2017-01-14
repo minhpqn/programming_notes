@@ -1,0 +1,31 @@
+# Các câu trả lời có thể cho câu hỏi "Xin cho biết địa chỉ của bạn"
+# Các loại câu trả lời
+# + Câu trả lời đầy đủ, trực tiếp (địa chỉ của tôi là...)
+# + Câu trả lời gián tiếp (tôi đăng ký với địa chỉ là...)
+# + Câu trả lời rút gọn (là ~, phòng 501, khu B2, tập thể Mai Dịch, Cầu Giấy, Hà Nội)
+
+1: Địa chỉ của tôi là số nhà 5, ngõ 1, đường Phạm Văn Đồng, Cầu Giấy, Hà Nội.
+2: Địa chỉ của em là số nhà 5, ngõ 1, đường Phạm Văn Đồng, Cầu Giấy, Hà Nội.
+3: Địa chỉ là số nhà 5, ngõ 1, đường Phạm Văn Đồng, Cầu Giấy, Hà Nội.
+4: Địa chỉ ở phòng 501, khu B2, tập thể Mai Dịch, Cầu Giấy, Hà Nội.
+5: Tôi ở phòng 501, khu B2, tập thể Mai Dịch, Cầu Giấy, Hà Nội.
+6: Tôi đang ở số nhà 5, ngõ 1, đường Phạm Văn Đồng, Cầu Giấy, Hà Nội.
+7: Nhà tôi ở số nhà 5, ngõ 1, đường Phạm Văn Đồng, Cầu Giấy, Hà Nội.
+8: Địa chỉ nhà tôi là phòng 501, khu B2, tập thể Mai Dịch, Cầu Giấy, Hà Nội.
+9: Địa chỉ nhà tôi ở phòng 501, khu B2, tập thể Mai Dịch, Cầu Giấy, Hà Nội.
+10: Em ở phòng 501, khu B2, tập thể Mai Dịch, Cầu Giấy, Hà Nội.
+11: Tôi đang sống tại số nhà 5, ngõ 1, đường Phạm Văn Đồng, Cầu Giấy, Hà Nội.
+12: Nhà tôi ở trên đường đường Phạm Văn Đồng, Cầu Giấy, Hà Nội.
+13: Là số nhà 5, ngõ 1, đường Phạm Văn Đồng, Cầu Giấy, Hà Nội.
+14: Phòng 501, khu B2, tập thể Mai Dịch, Cầu Giấy, Hà Nội.
+15: Địa chỉ của tôi là số 524 Khu phố III, P. Đông Sơn, Thị xã Bìm Sơn, Thanh Hóa.
+16: Địa chỉ nhà tôi là số 3/85 Nguyễn Công Trứ, Lê Chân, Hải Phòng.
+17: Địa chỉ nhà riêng của tôi là số 12, ngõ 70 Thái Hà, Đống Đa, Hà Nội.
+18: Địa chỉ thường trú của tôi là số 12, ngõ 70 Thái Hà, Đống Đa, Hà Nội.
+19: Địa chỉ trong hợp đồng là phòng 501, khu B2, tập thể Mai Dịch, Cầu Giấy, Hà Nội.
+20: Tôi đăng ký với địa chỉ là số 12, ngõ 70 Thái Hà, Đống Đa, Hà Nội.
+21: Tôi đăng ký với địa chỉ số 12, ngõ 70 Thái Hà, Đống Đa, Hà Nội.
+
+
+
+

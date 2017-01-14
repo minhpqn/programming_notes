@@ -2,6 +2,16 @@
 
 Ghi chép cá nhân khi học, sử dụng Pandas cho xử lý dữ liệu.
 
+## Replace columns' values with conditions
+
+```
+df.ix[df["Intent"] == "reset_pass", "Intent"] = "unable_login"
+```
+
+## Read excel files
+
+Dùng function pandas.read_excel()
+
 ## Select by Boolean indexes
 
 Sử dụng hàm ```loc```.

@@ -1,7 +1,20 @@
 # Python Notes
+
 Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
+
+## Delete an python environment with conda
+
+```
+conda env remove -n <name_of_env>
+```
+
+## Show python environments with conda
+
+```
+conda info --envs
+```
 
 ## Python regular expression for email string
 

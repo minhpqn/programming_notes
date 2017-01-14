@@ -1,0 +1,78 @@
+input: địa_chỉ của tôi là số nhà 5 , ngõ 1 , đường phạm_văn_đồng , cầu_giấy , hà_nội .
+output: địa_chỉ của tôi là <ADDRESS>số nhà 5</ADDRESS> , <ADDRESS>ngõ 1</ADDRESS> , <ADDRESS>đường phạm_văn_đồng</ADDRESS> , <DISTRICT>cầu_giấy</DISTRICT> , <PROVINCE>hà_nội</PROVINCE> .
+
+input: địa_chỉ của em là số nhà 5 , ngõ 1 , đường phạm_văn_đồng , cầu_giấy , hà_nội .
+output: địa_chỉ của em là <ADDRESS>số nhà 5</ADDRESS> , <ADDRESS>ngõ 1</ADDRESS> , <ADDRESS>đường phạm_văn_đồng</ADDRESS> , <DISTRICT>cầu_giấy</DISTRICT> , <PROVINCE>hà_nội</PROVINCE> .
+
+input: địa_chỉ của em là số nhà 5 , ngõ 1 , đường phạm_văn_đồng , cầu_giấy .
+output: địa_chỉ của em là <ADDRESS>số nhà 5</ADDRESS> , <ADDRESS>ngõ 1</ADDRESS> , <ADDRESS>đường phạm_văn_đồng</ADDRESS> , <DISTRICT>cầu_giấy</DISTRICT> .
+
+input: địa_chỉ là số nhà 5 , ngõ 1 , đường phạm_văn_đồng , cầu_giấy , hà_nội .
+output: địa_chỉ là <ADDRESS>số nhà 5</ADDRESS> , <ADDRESS>ngõ 1</ADDRESS> , <ADDRESS>đường phạm_văn_đồng</ADDRESS> , <DISTRICT>cầu_giấy</DISTRICT> , <PROVINCE>hà_nội</PROVINCE> .
+
+input: địa_chỉ ở phòng 501 , khu b2 , tập_thể mai_dịch , cầu_giấy , hà_nội .
+output: địa_chỉ ở <ADDRESS>phòng 501</ADDRESS> , <ADDRESS>khu b2</ADDRESS> , <ADDRESS>tập_thể mai_dịch</ADDRESS> , <DISTRICT>cầu_giấy</DISTRICT> , <PROVINCE>hà_nội</PROVINCE> .
+
+input: tôi ở phòng 501 , khu b2 , tập_thể mai_dịch , cầu_giấy , hà_nội .
+output: tôi ở <ADDRESS>phòng 501</ADDRESS> , <ADDRESS>khu b2</ADDRESS> , <ADDRESS>tập_thể mai_dịch</ADDRESS> , <DISTRICT>cầu_giấy</DISTRICT> , <PROVINCE>hà_nội</PROVINCE> .
+
+input: tôi đang ở số nhà 5 , ngõ 1 , đường phạm_văn_đồng , cầu_giấy , hà_nội .
+output: tôi đang ở <ADDRESS>số nhà 5</ADDRESS> , <ADDRESS>ngõ 1</ADDRESS> , <ADDRESS>đường phạm_văn_đồng</ADDRESS> , <DISTRICT>cầu_giấy</DISTRICT> , <PROVINCE>hà_nội</PROVINCE> .
+
+input: nhà tôi ở số nhà 5 , ngõ 1 , đường phạm_văn_đồng , cầu_giấy , hà_nội .
+output: nhà tôi ở <ADDRESS>số nhà 5</ADDRESS> , <ADDRESS>ngõ 1</ADDRESS> , <ADDRESS>đường phạm_văn_đồng</ADDRESS> , <DISTRICT>cầu_giấy</DISTRICT> , <PROVINCE>hà_nội</PROVINCE> .
+
+input: địa_chỉ nhà tôi là phòng 501 , khu b2 , tập_thể mai_dịch , cầu_giấy , hà_nội .
+output: địa_chỉ nhà tôi là <ADDRESS>phòng 501</ADDRESS> , <ADDRESS>khu b2</ADDRESS> , <ADDRESS>tập_thể mai_dịch</ADDRESS> , <DISTRICT>cầu_giấy</DISTRICT> , <PROVINCE>hà_nội</PROVINCE> .
+
+input: địa_chỉ nhà tôi ở phòng 501 , khu b2 , tập_thể mai_dịch , cầu_giấy , hà_nội .
+output: địa_chỉ nhà tôi ở <ADDRESS>phòng 501</ADDRESS> , <ADDRESS>khu b2</ADDRESS> , <ADDRESS>tập_thể mai_dịch</ADDRESS> , <DISTRICT>cầu_giấy</DISTRICT> , <PROVINCE>hà_nội</PROVINCE> .
+
+input: em ở phòng 501 , khu b2 , tập_thể mai_dịch , cầu_giấy , hà_nội .
+output: em ở <ADDRESS>phòng 501</ADDRESS> , <ADDRESS>khu b2</ADDRESS> , <ADDRESS>tập_thể mai_dịch</ADDRESS> , <DISTRICT>cầu_giấy</DISTRICT> , <PROVINCE>hà_nội</PROVINCE> .
+
+input: tôi đang sống tại số nhà 5 , ngõ 1 , đường phạm_văn_đồng , cầu_giấy , hà_nội .
+output: tôi đang sống tại <ADDRESS>số nhà 5</ADDRESS> , <ADDRESS>ngõ 1</ADDRESS> , <ADDRESS>đường phạm_văn_đồng</ADDRESS> , <DISTRICT>cầu_giấy</DISTRICT> , <PROVINCE>hà_nội</PROVINCE> .
+
+input: nhà tôi ở trên đường_phạm_văn_đồng , cầu_giấy , hà_nội .
+output: nhà tôi ở <ADDRESS>trên đường_phạm_văn_đồng</ADDRESS> , <ADDRESS>cầu_giấy</ADDRESS> , <PROVINCE>hà_nội</PROVINCE> .
+
+input: là số nhà 5 , ngõ 1 , đường phạm_văn_đồng , cầu_giấy , hà_nội .
+output: là <ADDRESS>số nhà 5</ADDRESS> , <ADDRESS>ngõ 1</ADDRESS> , <ADDRESS>đường phạm_văn_đồng</ADDRESS> , <DISTRICT>cầu_giấy</DISTRICT> , <PROVINCE>hà_nội</PROVINCE> .
+
+input: phòng 501 , khu b2 , tập_thể mai_dịch , cầu_giấy , hà_nội .
+output: <ADDRESS>phòng 501</ADDRESS> , <ADDRESS>khu b2</ADDRESS> , <ADDRESS>tập_thể mai_dịch</ADDRESS> , <DISTRICT>cầu_giấy</DISTRICT> , <PROVINCE>hà_nội</PROVINCE> .
+
+input: địa_chỉ của tôi là số 524 khu_phố iii , phường_đông_sơn , thị_xã bìm_sơn , thanh_hóa .
+output: địa_chỉ của tôi là <ADDRESS>số 524 khu_phố iii</ADDRESS> , <ADDRESS>phường_đông_sơn</ADDRESS> , <DISTRICT>thị_xã bìm_sơn</DISTRICT> , <DISTRICT>thanh_hóa</DISTRICT> .
+
+input: địa_chỉ nhà tôi là số 3/85 nguyễn_công_trứ , lê_chân , hải_phòng .
+output: địa_chỉ nhà tôi là <ADDRESS>số 3/85 nguyễn_công_trứ</ADDRESS> , <DISTRICT>lê_chân</DISTRICT> , <PROVINCE>hải_phòng</PROVINCE> .
+
+input: địa_chỉ nhà_riêng của tôi là số 12 , ngõ 70 thái_hà , đống_đa , hà_nội .
+output: địa_chỉ nhà_riêng của tôi là <ADDRESS>số 12</ADDRESS> , <ADDRESS>ngõ 70 thái_hà</ADDRESS> , <DISTRICT>đống_đa</DISTRICT> , <PROVINCE>hà_nội</PROVINCE> .
+
+input: địa_chỉ thường_trú của tôi là số 12 , ngõ 70 thái_hà , đống_đa , hà_nội .
+output: địa_chỉ thường_trú của tôi là <ADDRESS>số 12</ADDRESS> , <ADDRESS>ngõ 70 thái_hà</ADDRESS> , <DISTRICT>đống_đa</DISTRICT> , <PROVINCE>hà_nội</PROVINCE> .
+
+input: địa_chỉ trong hợp_đồng là phòng 501 , khu b2 , tập_thể mai_dịch , cầu_giấy , hà_nội .
+output: địa_chỉ trong hợp_đồng là <ADDRESS>phòng 501</ADDRESS> , <ADDRESS>khu b2</ADDRESS> , <ADDRESS>tập_thể mai_dịch</ADDRESS> , <DISTRICT>cầu_giấy</DISTRICT> , <PROVINCE>hà_nội</PROVINCE> .
+
+input: tôi đăng_ký với địa_chỉ là số 12 , ngõ 70 thái_hà , đống_đa , hà_nội .
+output: tôi đăng_ký với địa_chỉ là <ADDRESS>số 12</ADDRESS> , <ADDRESS>ngõ 70 thái_hà</ADDRESS> , <DISTRICT>đống_đa</DISTRICT> , <PROVINCE>hà_nội</PROVINCE> .
+
+input: tôi đăng_ký với địa_chỉ số 12 , ngõ 70 thái_hà , đống_đa , hà_nội .
+output: tôi <ADDRESS>đăng_ký với địa_chỉ số 12</ADDRESS> , <ADDRESS>ngõ 70 thái_hà</ADDRESS> , <DISTRICT>đống_đa</DISTRICT> , <PROVINCE>hà_nội</PROVINCE> .
+
+input: thôn ba, xã sơn_đông, thị_xã sơn_tây, hà_nội
+output: <ADDRESS>thôn ba</ADDRESS>, <ADDRESS>xã sơn_đông</ADDRESS>, <DISTRICT>thị_xã sơn_tây</DISTRICT>, <PROVINCE>hà_nội</PROVINCE>
+
+input: huyện phú_xuyên, tp hà_nội
+output: <DISTRICT>huyện phú_xuyên</DISTRICT>, <PROVINCE>tp hà_nội</PROVINCE>
+
+input: số 15, nguyễn_trãi, thanh_xuân, hà_nội
+output: <ADDRESS>số 15</ADDRESS>, <ADDRESS>nguyễn_trãi</ADDRESS>, <DISTRICT>thanh_xuân</DISTRICT>, <PROVINCE>hà_nội</PROVINCE>
+
+input: xã sơn_đông, thị_xã sơn_tây, hà_nội
+output: <ADDRESS>xã sơn_đông</ADDRESS>, <DISTRICT>thị_xã sơn_tây</DISTRICT>, <PROVINCE>hà_nội</PROVINCE>
+
