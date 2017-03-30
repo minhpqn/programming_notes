@@ -1,5 +1,15 @@
 # Shell script notes
 
+## For i from 1 to N
+
+```for i in $(seq 1 $END); do echo $i; done```
+
+## Set the current directory
+
+```
+cur_dir=`cd $(dirname $0) && pwd`
+```
+
 ## Create tar.gz file
 
 ```

@@ -1,5 +1,27 @@
 # Some notes about using Linux/Unix
 
+Tác giả: Phạm Quang Nhật Minh
+
+## Tạo symbolic link
+
+```
+ln -s {target-filename} {symbolic-filename}
+```
+
+Tham khảo: [https://www.cyberciti.biz/faq/creating-soft-link-or-symbolic-link/](https://www.cyberciti.biz/faq/creating-soft-link-or-symbolic-link/)
+
+## sqlite3
+
+macOS provides an older sqlite3.
+
+Generally there are no consequences of this for you. If you build your
+own software and it requires this formula, you'll need to add to your
+build variables:
+
+LDFLAGS:  -L/usr/local/opt/sqlite/lib
+CPPFLAGS: -I/usr/local/opt/sqlite/include
+PKG_CONFIG_PATH: /usr/local/opt/sqlite/lib/pkgconfig
+
 ## Create a new user account on *NIX 
 
 Tham khảo

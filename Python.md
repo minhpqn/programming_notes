@@ -4,6 +4,40 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Cài đặt package trong pytorch
+
+```
+conda install torchtext -c soumith
+```
+
+## Create a separate environment
+
+```
+conda create --name bunnies python=3 astroid babel
+```
+
+## How to use *args and **kwargs in Python
+
+**kwargs
+
+```
+def test_var_kwargs(farg, **kwargs):
+    print "formal arg:", farg
+    for key in kwargs:
+        print "another keyword arg: %s: %s" % (key, kwargs[key])
+test_var_kwargs(farg=1, myarg2="two", myarg3=3)
+```
+
+*args
+
+```
+def test_var_args(farg, *args):
+    print "formal arg:", farg
+    for arg in args:
+        print "another arg:", arg
+test_var_args(1, "two", 3)
+```
+
 ## Delete an python environment with conda
 
 ```
