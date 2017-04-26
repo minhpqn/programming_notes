@@ -1,6 +1,29 @@
 # Git Notes
 Những ghi chép cá nhân khi sử dụng và học cách sử dụng Git cho các projects
 
+#### Branching trong git
+
+Tạo branch trong git
+
+```
+git checkout -b <branch_name>
+```
+
+Chuyển sang master
+
+```
+git checkout master
+```
+
+Xoá branch:
+
+```
+git branch -d feature_x
+```
+
+git - the simple guide: [http://rogerdudler.github.io/git-guide/](http://rogerdudler.github.io/git-guide/)
+
+
 #### Determine the URL that a local Git repository was originally cloned from
 
 ```

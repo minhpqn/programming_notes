@@ -4,6 +4,34 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Get group in regular expression match
+
+```
+import re
+r = re.search(r'', s)
+r.group(1)
+```
+
+## Pop the last element of a python list
+
+```
+a = [1, 2, 3]
+a.pop() # [1, 2]
+```
+
+## Set pythonpath before import statements
+
+```
+import sys
+sys.path.append(path_to_lib)
+```
+
+## Kiểm tra version của keras
+
+```
+python -c "import keras; print( keras.__version__ )"
+```
+
 ## Cài đặt package trong pytorch
 
 ```
