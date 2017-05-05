@@ -1,6 +1,24 @@
 # Git Notes
 Những ghi chép cá nhân khi sử dụng và học cách sử dụng Git cho các projects
 
+#### Merge another branch into your active branch
+
+```
+git merge <branch>
+```
+
+#### Xoá files khỏi git
+
+```
+git rm --cached mylogfile.log
+```
+
+For a directory:
+
+```
+git rm --cached -r mydirectory
+```
+
 #### Branching trong git
 
 Tạo branch trong git

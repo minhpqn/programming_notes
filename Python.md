@@ -4,6 +4,27 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Unzip a list of tuples
+
+Use ```zip(*list)```
+
+```
+>>> l = [(1,2), (3,4), (8,9)]
+>>> zip(*l)
+[(1, 3, 8), (2, 4, 9)]
+```
+
+## Randomly get N elements from a list
+
+```
+import numpy
+a = [1, 2, 3, 4, 5]
+# with replacement
+numpy.random.choice(a, 2, replace=True)
+# without replacement
+numpy.random.choice(a, 2, replace=False)
+```
+
 ## Get group in regular expression match
 
 ```

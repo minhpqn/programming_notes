@@ -2,6 +2,17 @@
 
 Ghi chép cá nhân khi học, sử dụng Pandas cho xử lý dữ liệu.
 
+## Fill NaN values
+
+
+
+## Read an excel file in a specific sheet
+
+```
+import pandas as pd
+df = pd.read_excel(path_to_file, sheetname = 'Hub ID related')
+```
+
 ## Replace columns' values with conditions
 
 ```

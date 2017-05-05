@@ -2,6 +2,18 @@
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Chạy Cabocha với loại từ điển khác
+
+```
+cabocha -P IPA
+```
+
+## Set đường dẫn tới các file .h cần thiết khi biên dịch
+
+```
+export CPPFLAGS=-I/usr/local/include
+```
+
 ## Tạo symbolic link
 
 ```

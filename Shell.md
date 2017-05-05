@@ -1,5 +1,17 @@
 # Shell script notes
 
+Author: Pham Quang Nhat Minh
+
+## If then else with string comparision
+
+```
+if [ "$Sourcesystem" = "XYZ" ]; then 
+    echo "Sourcesystem Matched" 
+else
+    echo "Sourcesystem is NOT Matched $Sourcesystem"  
+fi;
+```
+
 ## For i from 1 to N
 
 ```for i in $(seq 1 $END); do echo $i; done```
