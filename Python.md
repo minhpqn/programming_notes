@@ -4,6 +4,139 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Read the json file, keep the order
+
+```
+json.load(filename, object_pairs_hook=collections.OrderedDict)
+```
+
+## Write unit test in python
+
+```
+import unittest
+class ABCTest(unittest.TestCase):
+    def testA(self):
+        # write test here
+        # self.assertEqual()
+        pass
+    def testB(self):
+        # write test here
+        pass
+```
+
+## Write json data to a file
+
+```
+with open(file_name, 'w') as fo:
+    json.dump(json_data, fo)
+```
+
+## Call Resful API in python3
+
+```
+import requests
+r = requests.get(base_url, params={'q': sentence})
+```
+
+## Export environment file yml
+
+```
+conda-env export --name root > environment.yml
+```
+
+## Read json data file into a dictionary object
+
+```
+import json
+with open(filepath) as f:
+    data = json.load(f)
+```
+
+## Random sample from a list
+
+```
+import random
+random.sample([1,2,3,4,5,6], k=3)
+```
+
+## Quy ước đặt tên biến khi viết python class
+
+Sử dụng tên biến dạng ```self.w_``` cho những biến được tạo ra khi gọi một method
+khác (thay vì khởi tạo ở hàm khởi tạo).
+
+## Using argparse for options
+
+```
+import argparse
+parser = argparse.ArgumentParser(description='Process some integers.')
+parser.add_argument('integers', metavar='N', type=int, nargs='+',
+                    help='an integer for the accumulator')
+parser.add_argument('--sum', dest='accumulate', action='store_const',
+                    const=sum, default=max,
+                    help='sum the integers (default: find the max)')
+
+args = parser.parse_args()
+print(args.accumulate(args.integers))
+```
+
+## Add an element in a certain position of a python list
+
+```
+a = [1, 2, 3, 4]
+a.insert(1,5)
+>> [1, 5, 2, 3, 4]
+```
+
+## Uninstall a package with conda
+
+```
+conda uninstall keras
+```
+
+## Replace multiple spaces with a single space in a string
+
+```
+import re
+astring = 'I am a   student'
+re.sub(r'\s{2,}', ' ', astring)
+```
+
+## Read MySQL database with Python
+
+Sử dụng PyMySQL: [https://github.com/PyMySQL/PyMySQL](https://github.com/PyMySQL/PyMySQL)
+
+Cài đặt PyMySQL bằng pip
+
+```
+pip install PyMySQL
+```
+
+Kết nối tới mysql database
+
+```
+import pymysql
+connection = pymysql.connect(host='localhost',
+                             user=username, 
+                             password=password,
+                             db=dbname,
+                             charset='utf8mb4')
+```
+
+Sử dụng cursor để lấy kết quả
+
+```
+with connection.cursor() as cursor:
+    sql = "SELECT * FROM `mydb`"
+    cursor.execute(sql)
+    result = cursor.fetchall()
+```
+
+Xem thêm tài liệu về PyMySQL tại: [http://pymysql.readthedocs.io/en/latest/index.html](http://pymysql.readthedocs.io/en/latest/index.html)
+
+## Python Exception Handling Techniques
+
+Reference: [https://doughellmann.com/blog/2009/06/19/python-exception-handling-techniques/](https://doughellmann.com/blog/2009/06/19/python-exception-handling-techniques/)
+
 ## Unzip a list of tuples
 
 Use ```zip(*list)```
@@ -65,9 +198,9 @@ conda install torchtext -c soumith
 conda create --name bunnies python=3 astroid babel
 ```
 
-## How to use *args and **kwargs in Python
+## How to use \*args and \*\*kwargs in Python
 
-**kwargs
+\*kwargs
 
 ```
 def test_var_kwargs(farg, **kwargs):
@@ -77,7 +210,7 @@ def test_var_kwargs(farg, **kwargs):
 test_var_kwargs(farg=1, myarg2="two", myarg3=3)
 ```
 
-*args
+\*args
 
 ```
 def test_var_args(farg, *args):
@@ -167,7 +300,6 @@ sen = 'The/at Fulton/np-tl County/nn-tl Grand/jj-tl Jury/nn-tl said/vbd Friday/n
 tagged_sen = [ pair.split('/') for pair in sen.split()]
 sen = untag(tagged_sen)
 ```
-
 
 ## How to match any string from a list of strings in regular expressions in python?
 

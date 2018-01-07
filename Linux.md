@@ -2,6 +2,55 @@
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Change owner of a directory
+
+```
+sudo chown -R ubuntu:ubuntu OpenNMT-py
+```
+
+## Identify CUDA version
+
+```
+cat /usr/local/cuda/version.txt
+```
+
+## Exit broken ssh session
+
+Gõ Enter, ~, .
+
+Tham khảo: [https://askubuntu.com/questions/29942/how-can-i-break-out-of-ssh-when-it-locks](https://askubuntu.com/questions/29942/how-can-i-break-out-of-ssh-when-it-locks)
+
+
+## Add an user with home directory
+
+```
+sudo useradd -m -d /home/ubuntu/minhpham/ abc
+```
+
+Change password
+
+```
+passwd abc
+```
+
+## Install git locally on the server
+
+Cài đặt git từ mã nguồn [https://git-scm.com/book/en/v2/Getting-Started-Installing-Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+
+## Remove public key from SSH's known_hosts file
+
+```
+ssh-keygen -R hostname
+```
+
+## Change the Shell in Mac OS X Terminal
+
+```
+chsh -s /bin/bash
+```
+
+Reference: [http://osxdaily.com/2012/03/21/change-shell-mac-os-x/](http://osxdaily.com/2012/03/21/change-shell-mac-os-x/)
+
 ## Chạy Cabocha với loại từ điển khác
 
 ```
@@ -34,7 +83,7 @@ LDFLAGS:  -L/usr/local/opt/sqlite/lib
 CPPFLAGS: -I/usr/local/opt/sqlite/include
 PKG_CONFIG_PATH: /usr/local/opt/sqlite/lib/pkgconfig
 
-## Create a new user account on *NIX 
+## Create a new user account on \*NIX 
 
 Tham khảo
 
@@ -60,7 +109,7 @@ cp -- "${a[@]: -4}" ~/
 ## Convert all tabs to spaces in a file
 
 ```
-cat file | tr '\' ' '
+cat file | tr '\t' ' '
 ```
 
 ## Redirect all results to stdout and stderr

@@ -2,9 +2,15 @@
 
 Ghi chép cá nhân khi học, sử dụng Pandas cho xử lý dữ liệu.
 
-## Fill NaN values
+## Generate random data frame
 
-
+```
+import pandas as pd
+import numpy as np
+x = 2* np.random.randn(100) + 1
+y = 2 * x + 0.5
+df = pd.DataFrame(data={"x": x, "y":y})
+```
 
 ## Read an excel file in a specific sheet
 

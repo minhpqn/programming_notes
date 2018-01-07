@@ -1,6 +1,16 @@
 # Scikit-learn Notes
 ===========================
 
+## Split data into 5 subsets
+
+```
+from sklearn.model_selection import KFold
+kf = KFold(n_splits=2)
+for train_index, test_index in kf.split(X):
+    print("TRAIN:", train_index, "TEST:", test_index)
+    X_train, X_test = X[train_index], X[test_index]
+```
+
 ## model_selection in scikit-learn version 0.18
 
 Từ version 0.20, module này sẽ bị remove.
