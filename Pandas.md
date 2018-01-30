@@ -2,6 +2,14 @@
 
 Ghi chép cá nhân khi học, sử dụng Pandas cho xử lý dữ liệu.
 
+
+## Filter rows with NULL value in a certain column
+
+```
+import pandas as pd
+df = df[pd.notnull(df['Number'])]
+```
+
 ## Generate random data frame
 
 ```

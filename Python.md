@@ -4,10 +4,65 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Biến __all__
+
+Danh sách các public objects khai báo bởi ```import *```
+
+Tham khảo: [https://stackoverflow.com/questions/44834/can-someone-explain-all-in-python](https://stackoverflow.com/questions/44834/can-someone-explain-all-in-python)
+
+Ví dụ [https://github.com/eladhoffer/seq2seq.pytorch/blob/master/seq2seq/datasets/__init__.py](https://github.com/eladhoffer/seq2seq.pytorch/blob/master/seq2seq/datasets/__init__.py)
+
+```
+from .text import LinedTextDataset
+from .open_subtitles import OpenSubtitles2016
+from .wmt import WMT16_de_en
+from .multi_language import MultiLanguageDataset
+from .coco_caption import CocoCaptions
+__all__ = ('LinedTextDataset',
+           'OpenSubtitles2016',
+           'MultiLanguageDataset',
+           'WMT16_de_en',
+           'CocoCaptions')
+```
+
+## Hàm getattr
+
+```
+getattr(object, name[, default]) -> value
+```
+    
+Get a named attribute from an object; getattr(x, 'y') is equivalent to x.y. When a default argument is given, it is returned when the attribute doesn't exist; without it, an exception is raised in that case.
+
+## Use pathlib to make directory
+
+```
+import pathlib
+pathlib.Path("dir_name").mkdir(exist_ok=True, parents=True)
+```
+
+## Sử dụng __init__.py
+
+```
+from .intent import IntentClassifier
+```
+
+## Defaultdict of defaultdict
+
+```
+defaultdict(lambda : defaultdict(int))
+```
+
+Refer [https://stackoverflow.com/questions/5029934/python-defaultdict-of-defaultdict](https://stackoverflow.com/questions/5029934/python-defaultdict-of-defaultdict)
+
+## Scan all matches of a regular expression
+
+Use ```findall```
+
+
 ## Read the json file, keep the order
 
 ```
-json.load(filename, object_pairs_hook=collections.OrderedDict)
+json.load(fi, object_pairs_hook=collections.OrderedDict)
 ```
 
 ## Write unit test in python
