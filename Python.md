@@ -4,7 +4,16 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
-## Biến __all__
+## Hàm unzip
+
+```
+a = [(1,2),(3,4),(5,6)]
+b,c = zip(*a)
+print(b) # (1, 3, 5)
+print(c) # (2, 4, 6)
+```
+
+## Biến \_\_all\_\_
 
 Danh sách các public objects khai báo bởi ```import *```
 
@@ -40,7 +49,7 @@ import pathlib
 pathlib.Path("dir_name").mkdir(exist_ok=True, parents=True)
 ```
 
-## Sử dụng __init__.py
+## Sử dụng \_\_init\_\_.py
 
 ```
 from .intent import IntentClassifier

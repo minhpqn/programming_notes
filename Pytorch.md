@@ -4,6 +4,15 @@ Created by: Pham Quang Nhat Minh
 
 Date created: December 21, 2017
 
+## Filter parameters that does not require gradients
+
+`parameters = filter(lambda p: p.requires_grad, net.parameters())`
+
+Tham khảo: 
+
+- [Can we use pre-trained word embeddings for weight initialization in nn.Embedding?](https://discuss.pytorch.org/t/can-we-use-pre-trained-word-embeddings-for-weight-initialization-in-nn-embedding/1222)
+- [Loading Glove Vectors in Pytorch](https://github.com/A-Jacobson/CNN_Sentence_Classification/blob/master/WordVectors.ipynb)
+
 ## LSTM layer trong pytorch 
 
 Tham khảo: [http://pytorch.org/docs/master/nn.html#lstm](http://pytorch.org/docs/master/nn.html#lstm)
