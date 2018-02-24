@@ -1,6 +1,12 @@
 # Git Notes
 Những ghi chép cá nhân khi sử dụng và học cách sử dụng Git cho các projects
 
+#### Set tracking information for a branch
+
+```
+git branch --set-upstream-to=origin/dev dev
+```
+
 #### Merge another branch into your active branch
 
 ```

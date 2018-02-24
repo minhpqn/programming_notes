@@ -2,6 +2,37 @@
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Keep environment variables after running a shell script
+
+- Để lưu trữ các biến môi trường sau khi chạy script dùng lệnh
+    * . my_script.sh
+    * source my_script.sh
+
+## Giải nén file .tar.bz2 trên linux
+
+```
+tar jvxf cabocha-0.69.tar.bz2
+```
+
+## Xem version của cuda
+
+      cat /usr/local/cuda/version.txt
+
+## Lỗi Centos warning: setlocale
+
+Centos warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory 
+
+Thêm các dòng sau vào file `/etc/environment`
+
+```
+vi /etc/environment
+
+add these lines...
+
+LANG=en_US.utf-8
+LC_ALL=en_US.utf-8
+```
+
 ## Change owner of a directory
 
 ```
