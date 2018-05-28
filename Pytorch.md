@@ -4,6 +4,20 @@ Created by: Pham Quang Nhat Minh
 
 Date created: December 21, 2017
 
+
+## Option padding_idx của layer Embedding
+
+Ví dụ:
+
+```
+emb = nn.Embedding(output_size, emb_size, padding_idx=0)
+```
+
+Khi có tùy chọn `padding_idx`, đầu ra của layer `Embedding` sẽ được pad bởi 0 khi có gặp các index bằng `padding_idx`.
+
+Tham khảo: [https://pytorch.org/docs/0.3.1/nn.html?highlight=embedding#torch.nn.Embedding](https://pytorch.org/docs/0.3.1/nn.html?highlight=embedding#torch.nn.Embedding)
+
+
 ## Filter parameters that does not require gradients
 
 `parameters = filter(lambda p: p.requires_grad, net.parameters())`

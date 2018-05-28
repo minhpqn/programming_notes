@@ -30,10 +30,10 @@ def read_matrix(filename):
             n = val_sum
         else:
             if size != k:
-                print 'number of categories mismatched: %s:  %s ' % (k, line)
+                print('number of categories mismatched: %s:  %s ' % (k, line))
                 sys.exit(1)
             if val_sum != n:
-                print 'number of raters mismatched: %s:  %s' % (n, line)
+                print('number of raters mismatched: %s:  %s' % (n, line))
 
         for i in range(k):
             matrix[m, i] = cols[i]
@@ -98,7 +98,7 @@ def read_raw_data(filename):
         for lb in fields:
             if lb != '':
                 lbdict[lb] = 1
-                if matrix1.has_key( (m, lb) ):
+                if matrix1.__contains__( (m, lb) ):
                     matrix1[m, lb] += 1
                 else:
                     matrix1[m, lb] = 1
@@ -112,7 +112,7 @@ def read_raw_data(filename):
 
     for i in range(m):
         for j in range(k):
-            if  matrix1.has_key( (i, labels[j]) ):
+            if  matrix1.__contains__( (i, labels[j]) ):
                 matrix[i, j] = matrix1[i, labels[j]]
             else:
                 matrix[i, j] = 0
@@ -120,9 +120,9 @@ def read_raw_data(filename):
     return (m, n, k, matrix)
     
 def usage():
-    print 'usage: [--raw | --matrix] datafile'
-    print ' --raw    use raw data'
-    print ' --matrix use matrix input'
+    print('usage: [--raw | --matrix] datafile')
+    print(' --raw    use raw data')
+    print(' --matrix use matrix input')
     sys.exit(1)
 
 def main():
@@ -145,14 +145,14 @@ def main():
     else:
         (m, n, k, matrix) = read_raw_data(datafile)
 
-    print '# Number of raters: %s' % n
-    print '# Number of subjects: %s' % m
-    print '# Number of categories: %s' % k
+    print('# Number of raters: %s' % n)
+    print('# Number of subjects: %s' % m)
+    print('# Number of categories: %s' % k)
     # print '# Matrix: %s' % repr(matrix)
-    print
+    print()
 
     kappa = fleiss_kappa(m, n, k, matrix)
-    print 'Fleiss kappa: %s' % kappa
+    print('Fleiss kappa: %s' % kappa)
 
 if __name__ == '__main__':
     main()
