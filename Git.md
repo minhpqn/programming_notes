@@ -1,4 +1,5 @@
 # Git Notes
+
 Những ghi chép cá nhân khi sử dụng và học cách sử dụng Git cho các projects
 
 #### Set tracking information for a branch

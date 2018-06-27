@@ -3,6 +3,15 @@
 Ghi chép cá nhân khi học, sử dụng Pandas cho xử lý dữ liệu.
 
 
+## Create a DataFrame from a list of list
+
+```
+import pandas as pd
+a_list = [ ["a1", "b1"], ["a2", "b2"]]
+headers = ["a", "b"]
+df = pd.DataFrame(a_list, columns=headers)
+```
+
 ## Filter rows with NULL value in a certain column
 
 ```
