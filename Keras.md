@@ -2,6 +2,26 @@
 
 Author: Pham Quang Nhat Minh
 
+### Convert labels to one-hot encoding
+
+```
+# Convert labels to categorical one-hot encoding
+one_hot_labels = keras.utils.to_categorical(labels, num_classes=10)
+```
+
+### Using custom metrics in keras
+
+```
+# For custom metrics
+import keras.backend as K
+
+def mean_pred(y_true, y_pred):
+    return K.mean(y_pred)
+
+model.compile(optimizer='rmsprop',
+              loss='binary_crossentropy',
+              metrics=['accuracy', mean_pred])
+```
 
 ### Adding Attention layer on top of RNN layer in keras
 

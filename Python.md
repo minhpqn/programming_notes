@@ -4,6 +4,21 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Load data with pickle
+
+Python 3
+
+```
+import pickle
+pairs = pickle.load(open("./file_path.pkl", "rb"))
+```
+
+## Update conda
+
+```
+conda update -n base conda
+```
+
 ## Hàm unzip
 
 ```

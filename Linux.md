@@ -2,6 +2,22 @@
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Find IP address on Mac OS 
+
+External Public IP Address
+
+```
+curl ipecho.net/plain ; echo
+```
+
+Internal IP Address
+
+```
+ifconfig | grep inet
+```
+
+Hoặc vào trang: [https://www.whatismyip.org/my-ip-address](https://www.whatismyip.org/my-ip-address)
+
 ## Keep environment variables after running a shell script
 
 - Để lưu trữ các biến môi trường sau khi chạy script dùng lệnh
