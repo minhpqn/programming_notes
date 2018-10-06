@@ -2,6 +2,12 @@
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Xác định đường dẫn của một process
+
+```
+pwdx <process_id>
+```
+
 ## Find IP address on Mac OS 
 
 External Public IP Address
