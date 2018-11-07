@@ -4,6 +4,50 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Sorting with custom comparision in Python 3
+
+Python 3 đã bỏ đối số `cmp=` của Python 2. Tuy nhiên chúng ta vẫn có thể
+thực hiện hàm comparision tùy biến với wrapper sau đây.
+
+```
+def cmp_to_key(mycmp):
+    'Convert a cmp= function into a key= function'
+    class K:
+        def __init__(self, obj, *args):
+            self.obj = obj
+
+        def __lt__(self, other):
+            return mycmp(self.obj, other.obj) < 0
+
+        def __gt__(self, other):
+            return mycmp(self.obj, other.obj) > 0
+
+        def __eq__(self, other):
+            return mycmp(self.obj, other.obj) == 0
+
+        def __le__(self, other):
+            return mycmp(self.obj, other.obj) <= 0
+
+        def __ge__(self, other):
+            return mycmp(self.obj, other.obj) >= 0
+
+        def __ne__(self, other):
+            return mycmp(self.obj, other.obj) != 0
+    return K
+
+
+def reverse_numeric(x, y):
+  return y - x
+
+sorted([5, 2, 4, 1, 3], key=cmp_to_key(reverse_numeric))
+```
+
+## Call super class's method
+
+```
+super(CNN, self).__init__(config)
+```
+
 ## Load data with pickle
 
 Python 3

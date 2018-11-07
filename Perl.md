@@ -18,10 +18,14 @@ MLTSHQKKFSNNYNSK*HDWFLSFKD*QNHSIKDIFNRFNHYIYNDLGIRTIA
 ```
 
 ## Regular expression - xác định vị trí cuối cùng của phần matching với pattern
-Ví dụ xâu ký tự ```str='0123456789```. Ta cần match với ```234``, khi đó vị trí cuối cùng được xác định là vị trí số 4.
-Sử dụng hàm pos trong perl. Tham khảo [http://stackoverflow.com/questions/832878/how-do-i-find-the-index-location-of-a-substring-matched-with-a-regex-in-perl](http://stackoverflow.com/questions/832878/how-do-i-find-the-index-location-of-a-substring-matched-with-a-regex-in-perl).
+
+Ví dụ xâu ký tự `str='0123456789'`. Ta cần match với `234`, khi đó vị trí cuối cùng được xác định là vị trí số 4. Sử dụng hàm pos trong perl. 
+
+Tham khảo [http://stackoverflow.com/questions/832878/how-do-i-find-the-index-location-of-a-substring-matched-with-a-regex-in-perl](http://stackoverflow.com/questions/832878/how-do-i-find-the-index-location-of-a-substring-matched-with-a-regex-in-perl).
+
 
 ## Regular expression - match xâu ký tự với một pattern từ một vị trí trong câu
+
 Vấn đề: match một xâu ký tự sau từ vị trí bất ký trong xâu. Cách đơn giản là lấy sub-string của xâu ký tự đó.
 ```perl
 str = '0123456789';
