@@ -1,5 +1,19 @@
 # Ghi ghép khi học/làm việc với ngôn ngữ Java
 
+## Tạo file jar thực thi được từ dòng lệnh
+
+```
+jar cfe evaluation.jar org.vlsp.ner.VLSP2018MUCEvaluation -C bin/ .
+```
+
+## Biên dịch project từ dòng lệnh
+
+```
+javac -d bin -sourcepath src/ src/com/example/test/Main.java
+```
+
+Reference: [https://kipalog.com/posts/Bien-dich-java-project-voi-command-line](https://kipalog.com/posts/Bien-dich-java-project-voi-command-line)
+
 ## Read a text file  line by line
 
 ```

@@ -2,6 +2,31 @@
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Tạo file tar.gz trong linux
+
+```
+tar -zcvf tar-archive-name.tar.gz source-folder-name
+```
+
+Reference: [https://www.zyxware.com/articles/2009/02/26/how-to-create-and-extract-a-tar-gz-archive-using-command-line](https://www.zyxware.com/articles/2009/02/26/how-to-create-and-extract-a-tar-gz-archive-using-command-line)
+
+## Convert multiple spaces into one
+
+Using tr
+
+```
+tr -s " " < file
+```
+
+or using awk
+
+```
+awk '{$2=$2};1' file
+```
+
+Reference: [https://unix.stackexchange.com/questions/145978/replace-multiple-spaces-with-one-using-tr-only/145979](https://unix.stackexchange.com/questions/145978/replace-multiple-spaces-with-one-using-tr-only/145979)
+
+
 ## Xác định đường dẫn của một process
 
 ```

@@ -6,8 +6,7 @@ Tác giả: Phạm Quang Nhật Minh
 
 ## Sorting with custom comparision in Python 3
 
-Python 3 đã bỏ đối số `cmp=` của Python 2. Tuy nhiên chúng ta vẫn có thể
-thực hiện hàm comparision tùy biến với wrapper sau đây.
+Python 3 đã bỏ đối số `cmp=` trong hàm sort của Python 2. Tuy nhiên chúng ta vẫn có thể cài đặt hàm sort thực hiện hàm comparision tùy biến với wrapper sau đây.
 
 ```
 def cmp_to_key(mycmp):
@@ -41,6 +40,8 @@ def reverse_numeric(x, y):
 
 sorted([5, 2, 4, 1, 3], key=cmp_to_key(reverse_numeric))
 ```
+
+Reference: [https://docs.python.org/3/howto/sorting.html](https://docs.python.org/3/howto/sorting.html)
 
 ## Call super class's method
 
