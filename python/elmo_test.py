@@ -54,11 +54,11 @@ if __name__ == '__main__':
         ['今'],
         ['潮水', '退']
     ]
-    print(get_elmo_vec(sents))
+    print(get_elmo_vec(sents, option=1))
     print()
-    print(get_elmo_vec(sents))
+    print(get_elmo_vec(sents, option=1))
     print()
-    print(get_elmo_vec(sents))
+    print(get_elmo_vec(sents, option=1))
     print()
     sen_vec = get_elmo_sen_vec(['今', '潮水', '退'])
     print(sen_vec.shape)

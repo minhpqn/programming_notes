@@ -2,6 +2,22 @@
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Vào một session cụ thể trong tmux
+
+```
+tmux a -t <session_name>
+```
+
+## Liệt kê các session trong tmux
+
+```
+tmux ls
+```
+
+## Đổi tên session name trong tmux
+
+Ctrl + B, $
+
 ## Tạo file tar.gz trong linux
 
 ```
