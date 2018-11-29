@@ -94,6 +94,17 @@ class TestBLEU(unittest.TestCase):
         self.assertAlmostEqual(1.0, compute_bleu(output1, reference))
         self.assertAlmostEqual(0.7598356856515925, compute_bleu(output2, reference))
 
+        # Test modified BLEU score by using the example from Wikipedia article
+        # https://en.wikipedia.org/wiki/BLEU
+        reference1 = ["the", "cat", "is", "on", "the", "mat"]
+        reference2 = ["there", "is", "a", "cat", "on", "the", "mat"]
+        candidate1 = ["the", "the", "the", "the", "the", "the", "the"]
+        candidate2 = ["the", "cat"]
+        self.assertAlmostEqual(2.0/7, compute_precision(1, candidate1, reference1))
+        self.assertAlmostEqual(1.0 / 7, compute_precision(1, candidate1, reference2))
+        self.assertEqual(1.0, compute_precision(1, candidate2, reference1))
+        self.assertEqual(1.0, compute_precision(2, candidate2, reference1))
+
     def test_char_score(self):
         output1 = '2007-07-11<pad><pad><pad><pad><pad><pad><pad><pad><pad><pad>'
         output2 = '2007-07-12<pad><pad><pad><pad><pad><pad><pad><pad><pad><pad>'  # it's 12 instead of 011
