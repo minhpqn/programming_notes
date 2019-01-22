@@ -2,6 +2,12 @@
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Check CUDA version
+
+```
+cat /usr/local/cuda/version.txt
+```
+
 ## Vào một session cụ thể trong tmux
 
 ```

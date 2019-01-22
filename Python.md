@@ -4,6 +4,276 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Create a DataFrame from a list of list
+
+```
+import pandas as pd
+a_list = [ ["a1", "b1"], ["a2", "b2"]]
+headers = ["a", "b"]
+df = pd.DataFrame(a_list, columns=headers)
+```
+
+## Filter rows with NULL value in a certain column
+
+```
+import pandas as pd
+df = df[pd.notnull(df['Number'])]
+```
+
+## Generate random data frame
+
+```
+import pandas as pd
+import numpy as np
+x = 2* np.random.randn(100) + 1
+y = 2 * x + 0.5
+df = pd.DataFrame(data={"x": x, "y":y})
+```
+
+## Read an excel file in a specific sheet
+
+```
+import pandas as pd
+df = pd.read_excel(path_to_file, sheetname = 'Hub ID related')
+```
+
+## Replace columns' values with conditions
+
+```
+df.ix[df["Intent"] == "reset_pass", "Intent"] = "unable_login"
+```
+
+## Read excel files
+
+Dùng function pandas.read_excel()
+
+## Select by Boolean indexes
+
+Sử dụng hàm ```loc```.
+
+## Select some specific columns in a data frame using indexes
+
+Use ```iloc```.
+
+```
+df.iloc[:,2]
+df.iloc[:,1:3]
+```
+
+## CheatSheet: Data Exploration using Pandas in Python
+
+Tham khảo tại [đây](https://www.analyticsvidhya.com/blog/2015/07/11-steps-perform-data-analysis-pandas-python).
+
+## Thay đổi giá trị NaN trong pandas
+
+Fill các giá trị Null cho một số columns.
+
+```
+cols = ['Suddenly_breaking_Flag', 'Harsh_acceleration_Flag',
+        'Quick_Changes_in_right', 'Quick_Changes_in_left', 'Shock_Flag',
+        'bCall_Flag', 'eCall_Flag']
+for col in cols:
+    df.ix[pd.isnull(df[col]), col] = 0
+```
+
+## Bỏ các cột trong pandas
+
+Sử dụng hàm ```drop```.
+
+```
+X = df.drop(['label', 'label2', 'metadata_file'], axis = 1)
+```
+
+Tham khảo tại [đây](http://stackoverflow.com/questions/14940743/selecting-excluding-sets-of-columns-in-pandas).
+
+## Tham khảo 12 kỹ thuật xử lý dữ liệu với pandas
+
+[https://www.analyticsvidhya.com/blog/2016/01/12-pandas-techniques-python-data-manipulation/](https://www.analyticsvidhya.com/blog/2016/01/12-pandas-techniques-python-data-manipulation/)
+
+## Chuyển giá trị nhãn thành các mức (levels)
+
+Tham khảo về categorical data của pandas.
+
+[http://pandas.pydata.org/pandas-docs/stable/categorical.html](http://pandas.pydata.org/pandas-docs/stable/categorical.html)
+
+```
+# Chuyển một cột thành dạng category
+df['label'] = df['label'].astype('category')
+# Gán giá trị cho cột mới theo các code của cột label
+df['label2'] = df['label'].cat.codes
+```
+
+## Chọn cột trong DataFrame
+
+```
+import pandas as pd
+# cột thứ nhất
+df.ix[:,0]
+```
+
+## Ghi nội dung của DataFrame ra file HTML
+
+```
+# Cách 1:
+with open('my_file.html', 'w') as fo:
+    fo.write(df.to_html())
+# Cách 2:
+df.to_html(open('my_file.html', 'w'))
+# Cách 3:
+with open('my_file.html', 'w') as fo:
+    tsod.to_html(fo)
+```
+
+Vì ở chế độ mặc định, nếu nội dung trong một cell có độ dài vượt quá 50, pandas sẽ thay thế phần vượt quá bằng các dấu chấm, nên muốn hiển thị toàn bộ nội dung của các cell, ta phải dùng tuỳ chọn sau đây. Tham khảo: [http://pandas.pydata.org/pandas-docs/stable/options.html](http://pandas.pydata.org/pandas-docs/stable/options.html).
+
+```
+pd.set_option('display.max_colwidth', -1)
+```
+
+Tham khảo:
+
+- [pandas.DataFrame.to_html()](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.to_html.html)
+- [Save pandas to_html as a file](http://stackoverflow.com/questions/14897833/save-pandas-to-html-as-a-file), trên stackoverflow.
+
+## Sampling dữ liệu từ DataFrame
+
+```
+import pandas as pd
+import numpy as np
+
+indexes = np.random.choice(range(0, df.shape[0]), 
+                           size=num_sample,                        
+                           replace=True)
+
+sample = df.iloc[sorted(indexes)])
+```
+
+## Tài liệu tham khảo về Pandas
+
+- 10 Minutes to pandas. Bài hướng dẫn căn bản về cách sử dụng Pandas: [http://pandas.pydata.org/pandas-docs/stable/10min.html](http://pandas.pydata.org/pandas-docs/stable/10min.html).
+- Pandas Cookbook. Xem tại link: [http://pandas.pydata.org/pandas-docs/stable/cookbook.html](http://pandas.pydata.org/pandas-docs/stable/cookbook.html).
+- Pandas API Reference. Xem tại đây: [http://pandas.pydata.org/pandas-docs/stable/api.html](http://pandas.pydata.org/pandas-docs/stable/api.html)
+
+## Kết nối các DataFrame dựa vào khoá chung
+
+Tham khảo: [http://pandas.pydata.org/pandas-docs/stable/merging.html](http://pandas.pydata.org/pandas-docs/stable/merging.html)
+
+```
+merge(left, right, how='inner', on=None, left_on=None, right_on=None,
+      left_index=False, right_index=False, sort=True,
+      suffixes=('_x', '_y'), copy=True, indicator=False)
+```
+
+## Split data into 5 subsets
+
+```
+from sklearn.model_selection import KFold
+kf = KFold(n_splits=2)
+for train_index, test_index in kf.split(X):
+    print("TRAIN:", train_index, "TEST:", test_index)
+    X_train, X_test = X[train_index], X[test_index]
+```
+
+## model_selection in scikit-learn version 0.18
+
+Từ version 0.20, module này sẽ bị remove.
+
+/Users/minhpham/anaconda/lib/python3.5/site-packages/sklearn/cross_validation.py:44: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
+  "This module will be removed in 0.20.", DeprecationWarning)
+
+## Split data into training & test data
+
+Use the function ```train_test_split``` in ```model_selection```.
+
+Reference: [http://scikit-learn.org/stable/modules/classes.html#module-sklearn.model_selection](http://scikit-learn.org/stable/modules/classes.html#module-sklearn.model_selection).
+
+```
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(
+                                      X, y, test_size=0.33, random_state=42)
+```
+
+## References for ensemble methods with scikit-learn
+
+* [Kaggle Ensembling Guide](http://mlwave.com/kaggle-ensembling-guide/) on MLWave.
+* [StackingClassifier](http://rasbt.github.io/mlxtend/user_guide/classifier/StackingClassifier/), by Rasbt.
+* [MLXtend](https://github.com/rasbt/mlxtend)
+* [Implementing a Weighted Majority Rule Ensemble Classifier](http://sebastianraschka.com/Articles/2014_ensemble_classifier.html), by Sesbastian Raschka.
+
+## Feature Selection trong scikit-learn
+
+```
+# Sử dụng feature selection trong Pipeline
+from sklearn.pipeline import Pipeline
+clf = Pipeline([
+            ('feature_selection',
+             VarianceThreshold(threshold=(.99 * (1 - .99)))),
+            ('classification', LinearSVC())
+            ])
+```
+
+## Về Model selection trong scikit-learn
+
+Xem: [http://scikit-learn.org/stable/tutorial/statistical_inference/model_selection.html](http://scikit-learn.org/stable/tutorial/statistical_inference/model_selection.html)
+
+## Đánh giá các estimator với cross-validation
+
+Tham khảo: [http://scikit-learn.org/stable/modules/cross_validation.html](http://scikit-learn.org/stable/modules/cross_validation.html)
+
+## Phương pháp Ensemble trong Scikit-learn
+
+Tham khảo tại [http://scikit-learn.org/stable/modules/ensemble.html](http://scikit-learn.org/stable/modules/ensemble.html).
+
+Trong các phương pháp [Gradient Tree Boosting](https://en.wikipedia.org/wiki/Gradient_boosting) là một phương pháp rất hiệu quả.
+
+Tham khảo thêm trên machinelearningmastery Ensemble Machine Learning Algorithms in Python with scikit-learn](http://machinelearningmastery.com/ensemble-machine-learning-algorithms-python-scikit-learn/)
+
+## Scikit-learn cho sentiment analysis (1)
+
+Bài toán: làm thế nào đọc dữ liệu sentiment analysis một cách hiệu quả. File dữ liệu gồm các câu, mỗi câu trên một dòng, cùng với nhãn của câu đó (+1: positive, -1: negative). Ví dụ:
+
+```
++1 the rock is destined to be the 21st century's new " conan " and that he's going to make a splash even greater than arnold schwarzenegger , jean-claud van damme or steven segal . 
++1 the gorgeously elaborate continuation of " the lord of the rings " trilogy is so huge that a column of words cannot adequately describe co-writer/director peter jackson's expanded vision of j . r . r . tolkien's middle-earth .
+```
+
+Cách đơn giản là đọc nội dung của file vào 2 biến ```sentences, y``` trong đó ```sentences``` là danh sách các câu (mỗi câu là 1 xâu ký tự) và ```y``` là danh sách các nhãn (kiểu ```np.ndarray```).
+
+## Trích xuất đặc trưng
+
+Tham khảo trên trang: [http://scikit-learn.org/stable/modules/feature_extraction.html](http://scikit-learn.org/stable/modules/feature_extraction.html).
+
+Kỹ thuật feature hashing mình vẫn chưa nắm được rõ ràng. Tham khảo thêm tại các trang sau:
+- [Feature Hashing](https://en.wikipedia.org/wiki/Feature_hashing) trên Wikipedia.
+- Bài báo về kỹ thuật Feature Hashing trên ICML: Kilian Weinberger, Anirban Dasgupta, John Langford, Alex Smola and Josh Attenberg (2009). [Feature hashing for large scale multitask learning](http://alex.smola.org/papers/2009/Weinbergeretal09.pdf). Proc. ICML.
+
+## Về iterators và generators trong Python
+
+- [http://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do-in-python](http://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do-in-python)
+- [The Python yield keyword explained](http://pythontips.com/2013/09/29/the-python-yield-keyword-explained/)
+- [http://www.bogotobogo.com/python/python_function_with_yield_keyword_is_a_generator_iterator_next.php](http://www.bogotobogo.com/python/python_function_with_yield_keyword_is_a_generator_iterator_next.php)
+
+## Python's zip, map, and lambda
+
+- [https://bradmontgomery.net/blog/pythons-zip-map-and-lambda/](https://bradmontgomery.net/blog/pythons-zip-map-and-lambda/)
+
+
+## Use left-justify with StyleFrame
+
+```
+from StyleFrame import StyleFrame, Styler, utils
+StyleFrame(df2, styler_obj=Styler(horizontal_alignment=utils.horizontal_alignments.left, vertical_alignment=utils.vertical_alignments.top)).to_excel(filepath).save()
+```
+
+## Write data frame to excel with style
+
+Sử dụng StyleFrame
+
+```
+from StyleFrame import StyleFrame
+StyleFrame(df).to_excel(path_to_xlsx_output).save()
+```
+
 ## Sorting with custom comparision in Python 3
 
 Python 3 đã bỏ đối số `cmp=` trong hàm sort của Python 2. Tuy nhiên chúng ta vẫn có thể cài đặt hàm sort thực hiện hàm comparision tùy biến với wrapper sau đây.

@@ -4,7 +4,6 @@ Created by: Pham Quang Nhat Minh
 
 Date created: December 21, 2017
 
-
 ## Option padding_idx của layer Embedding
 
 Ví dụ:
