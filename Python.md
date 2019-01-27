@@ -4,6 +4,12 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Xóa conda environment 
+
+```
+conda env remove -n torch
+```
+
 ## Create a DataFrame from a list of list
 
 ```
