@@ -2,6 +2,46 @@
 
 Tác giả: Phạm Quang Nhật Minh
 
+## How to check free disk space in Linux
+
+```
+df -ha
+```
+
+Tham khảo: [How to check free disk space in Linux](https://opensource.com/article/18/7/how-check-free-disk-space-linux)
+
+## Check địa chỉ ip của AWS server
+
+```
+curl http://checkip.amazonaws.com
+```
+
+Tham khảo: [https://forums.aws.amazon.com/thread.jspa?threadID=216352](https://forums.aws.amazon.com/thread.jspa?threadID=216352)
+
+## Rename a pane in tmux
+
+Ctrl + b + ,
+
+Reference: [https://stackoverflow.com/questions/40234553/how-to-rename-a-pane-in-tmux](https://stackoverflow.com/questions/40234553/how-to-rename-a-pane-in-tmux)
+
+## Đặt alias cho các ssh connection
+
+Sửa file `~/.ssh/config`
+
+Content
+
+```
+Host xxx
+    Hostname xxx
+    User xxx
+```
+
+## Check Ubuntu version
+
+```
+lsb_release -a
+```
+
 ## Check CUDA version
 
 ```

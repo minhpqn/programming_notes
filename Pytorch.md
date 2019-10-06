@@ -1,8 +1,36 @@
 # Ghi chép khi sử dụng Pytorch cho Deep Learning
 
-Created by: Pham Quang Nhat Minh
+Tạo bởi: Pham Quang Nhat Minh
 
-Date created: December 21, 2017
+Ngày tạo: December 21, 2017
+
+## Convert TensorFlow checkpoint for BERT to Pytorch saved file
+
+```
+export BERT_BASE_DIR=/path/to/bert/uncased_L-12_H-768_A-12
+
+pytorch_pretrained_bert convert_tf_checkpoint_to_pytorch \
+  $BERT_BASE_DIR/bert_model.ckpt \
+  $BERT_BASE_DIR/bert_config.json \
+  $BERT_BASE_DIR/pytorch_model.bin
+```
+
+## model.train() và model.eval()
+
+Khi trong mô hình có sử dụng dropout thì phải gọi lệnh `model.eval()` trước khi đưa ra dự đoán.
+
+`model.eval()` tương đương với `model.train(False)`.
+
+Tham khảo: 
+
+- [https://jamesmccaffrey.wordpress.com/2019/01/23/pytorch-train-vs-eval-mode/](https://jamesmccaffrey.wordpress.com/2019/01/23/pytorch-train-vs-eval-mode/)
+
+## Đọc model từ file
+
+```
+import torch
+model_state_dict = torch.load(model_file, map_location=lambda storage, loc: storage)
+```
 
 ## Option padding_idx của layer Embedding
 

@@ -4,7 +4,115 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
-## Xóa conda environment 
+## Check Tensorflow-gpu
+
+```
+import tensorflow as tf
+
+with tf.device('/gpu:0'):
+    a = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[2, 3], name='a')
+    b = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[3, 2], name='b')
+    c = tf.matmul(a, b)
+```
+
+See: [https://www.quora.com/How-do-I-confirm-that-my-TensorFlow-scripts-are-running-in-GPU-when-using-Python-script](https://www.quora.com/How-do-I-confirm-that-my-TensorFlow-scripts-are-running-in-GPU-when-using-Python-script)
+
+## fullmatch, match và search
+
+- fullmatch: match toàn bộ string với regex pattern
+- match: match string tính từ vị trí bắt đầu (không tính newline character)
+- search: scan toàn bộ string
+
+## (?P<group_name>) trong python
+
+Lấy matched string thông qua name
+
+```
+import re
+match = re.search('(?P<name>.*) (?P<phone>.*)', 'John 123456')
+match.group('name')
+# 'John'
+```
+
+## (?:re) in python regular expression
+
+Khi dùng (?:re), cụm nằm trong dấu ngoặc sẽ bị bỏ qua và không nằm trong kết quả của m.groups().
+
+Ví dụ:
+
+```
+# Result: ('12',)
+regex = re.compile("(?:set|let) var = (\\w+|\\d+)")
+print regex.match("set var = 12").groups()
+```
+
+Tham khảo: 
+
+1. [https://stackoverflow.com/questions/22989241/python-re-example](https://stackoverflow.com/questions/22989241/python-re-example)
+2. [https://www.tutorialspoint.com/python/python_reg_expressions.htm](https://www.tutorialspoint.com/python/python_reg_expressions.htm)
+
+
+## Export requirements file với pip
+
+```
+pip freeze > requirements.txt
+```
+
+## Dialogflow query_result instance
+
+- [Where is documentation on query_result instance #84](https://github.com/googleapis/dialogflow-python-client-v2/issues/84)
+- [DetectIntentResponse](https://cloud.google.com/dialogflow/docs/reference/rpc/google.cloud.dialogflow.v2#detectintentresponse)
+- [detect_intent_audio.py](https://github.com/googleapis/dialogflow-python-client-v2/blob/master/samples/detect_intent_audio.py#L65)
+- [Python Generated Code](https://developers.google.com/protocol-buffers/docs/reference/python-generated)
+- [Protocol Buffers - Google's data interchange format](https://github.com/protocolbuffers/protobuf)
+
+## Install environment using requirement file
+
+```
+pip install -r requirements.txt
+```
+
+## Use literal_eval from ast module to convert string list to list 
+
+```
+str_list = "[1, 2, 3]" # type(str_list ) = str 
+import ast 
+lst = ast.literal_eval(str_list) # type(lst) = list
+```
+
+## In ra ngày giờ hiện tại
+
+```
+>>> from datetime import datetime
+>>> datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+```
+
+## Liệt kê các biến sử dụng trong jupyter notebook
+
+Need a listing of variables you've defined in a #Jupyter notebook? Try the %whos magic.
+
+
+## Ghép các đặc trưng TF-IDF với đặc trưng trích xuất bằng tay
+
+Dùng hàm `hstack`
+
+
+```
+from scipy.sparse import hstack, csr_matrix, vstack
+
+X_train = hstack([X_train_tfidf, csr_matrix(X_train_static)]).tocsr()
+```
+
+## Generate random number
+
+```
+import random
+
+N = random.randint(0, 100) # Generate random int number from [0, 100]
+
+```
+
+## Xóa conda environment
 
 ```
 conda env remove -n torch
