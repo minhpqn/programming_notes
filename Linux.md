@@ -2,6 +2,18 @@
 
 Tác giả: Phạm Quang Nhật Minh
 
+## NVIDIA NVML Driver/library version mismatch
+
+Tham khảo: [https://stackoverflow.com/questions/43022843/nvidia-nvml-driver-library-version-mismatch](https://stackoverflow.com/questions/43022843/nvidia-nvml-driver-library-version-mismatch)
+
+## Clear command line history
+
+```
+history -c
+```
+
+Tham khảo: [https://www.ostechnix.com/how-to-clear-command-line-history-in-linux/](https://www.ostechnix.com/how-to-clear-command-line-history-in-linux/)
+
 ## How to check free disk space in Linux
 
 ```

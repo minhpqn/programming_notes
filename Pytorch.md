@@ -4,6 +4,20 @@ Tạo bởi: Pham Quang Nhat Minh
 
 Ngày tạo: December 21, 2017
 
+## Using GPU efficiently
+
+"Keep in mind that it is expensive to move data back and forth from the GPU. Therefore, the typical procedure involves doing many of the parallelizable computations on the GPU and then transferring just the final result back to the CPU. This will allow you to fully utilize the GPUs."
+
+
+## Handy function to show properties of a tensor
+
+```
+def describe(x):
+    print("Type: {}".format(x.type()))
+    print("Shape/size: {}".format(x.shape))
+    print("Values: \n{}".format(x))
+```
+
 ## Convert TensorFlow checkpoint for BERT to Pytorch saved file
 
 ```

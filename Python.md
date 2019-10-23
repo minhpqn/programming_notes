@@ -4,6 +4,27 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
+
+## Khắc phục lỗi khi build tensorflow 2.0.0 cho python 3.6
+
+Lỗi
+
+```
+Could not dlopen library 'libcusolver.so.9.0'; dlerror: /usr/local/cuda-9.0/lib64/libcusolver.so.9.0: undefined symbol: GOMP_critical_end; LD_LIBRARY_PATH: /usr/local/cuda-9.0/lib64
+```
+
+```
+import ctypes
+ctypes.CDLL("libgomp.so.1", mode=ctypes.RTLD_GLOBAL)
+
+import tensorflow as tf
+
+tf.test.is_gpu_available()
+tf.test.is_built_with_cuda()
+```
+
+Tham khảo: [https://github.com/tensorflow/tensorflow/issues/30753](https://github.com/tensorflow/tensorflow/issues/30753)
+
 ## Check Tensorflow-gpu
 
 ```

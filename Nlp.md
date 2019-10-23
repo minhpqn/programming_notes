@@ -4,6 +4,17 @@ Tạo bởi: Phạm Quang Nhật Minh
 
 Ngày tạo: 16/06/2019
 
+## Biaffine classifier nghĩa là gì
+
+
+Ok, so I found an answer. What the papers meant with biaffine classifier is as follows. In neural networks, we have the usual transformation like Ax+b, where A is a matrix, or more conventionally Wx+b, where W is a weight matrix, x is an input vector and b is a bias.
+
+So this Wx+b transformation is an affine transformation, while if we apply another transformation to this namely W(Wx+b)+b, then this is an affine transformation applied twice. Hence, biaffine.
+
+Reference:
+
+- [https://math.stackexchange.com/questions/2792369/what-is-a-bi-affine-classifier](https://math.stackexchange.com/questions/2792369/what-is-a-bi-affine-classifier)
+
 ## How to freeze bert model and just train a classifier?
 
 ```
