@@ -4,6 +4,65 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Cách vẽ Keras model
+
+```
+# Vẽ trên ipython-notebook
+
+from IPython.display import SVG
+from keras.utils.vis_utils import model_to_dot
+
+SVG(model_to_dot(model.model, show_shapes=True, show_layer_names=True).create(prog='dot', format='svg'))
+```
+
+Tham khảo: [How to plot Keras models](https://medium.com/@zhang_yang/how-to-plot-keras-models-493469884fd5), by Yang Zhang.
+
+Đưa ra file ảnh
+
+```
+from keras.utils import plot_model
+plot_model(model, to_file='model_plot4a.png', show_shapes=True, show_layer_names=True)
+```
+
+## Function map() in python
+
+Được dùng khi muốn áp dụng một biến đổi nào đó trên một iterable object.
+
+Ví dụ:
+
+```
+def to_upper_case(s):
+    return str(s).upper()
+
+map_iterator = map(to_upper_case, 'abc')
+```
+
+Hoặc có thể dùng lambda
+
+```
+map_iterator = map(lambda x: str(x).upper(), 'abc')
+```
+
+## Specify Tensorflow version on Google Colab
+
+```
+%tensorflow_version 2.x
+```
+
+If we want to switch to 1.x version use
+
+```
+%tensorflow_version 1.x
+```
+
+Reference: [https://colab.research.google.com/notebooks/tensorflow_version.ipynb#scrollTo=NeWVBhf1VxlH](https://colab.research.google.com/notebooks/tensorflow_version.ipynb#scrollTo=NeWVBhf1VxlH)
+
+## Setup environment variable on Google Colab
+
+```
+import os
+os.environ['GLUE_DIR']="/content/gdrive/My Drive/Resources/Data/glue"
+```
 
 ## Khắc phục lỗi khi build tensorflow 2.0.0 cho python 3.6
 

@@ -2,6 +2,27 @@
 
 Những ghi chép cá nhân khi sử dụng và học cách sử dụng Git cho các projects
 
+#### Merget dev branch into master
+
+```
+I generally like to merge master into the development first so that if there are any conflicts, I can resolve in the development branch itself and my master remains clean.
+
+(on branch development)$ git merge master
+(resolve any merge conflicts if there are any)
+git checkout master
+git merge development (there won't be any conflicts now)
+
+There isn't much of a difference in the two approaches, but I have noticed sometimes that I don't want to merge the branch into master yet, after merging them, or that there is still more work to be done before these can be merged, so I tend to leave master untouched until final stuff.
+
+EDIT: From comments
+
+If you want to keep track of who did the merge and when, you can use --no-ff flag while merging to do so. This is generally useful only when merging development into the master (last step), because you might need to merge master into development (first step) multiple times in your workflow, and creating a commit node for these might not be very useful.
+
+git merge --no-ff development
+```
+
+Tham khảo: [https://stackoverflow.com/questions/14168677/merge-development-branch-with-master](https://stackoverflow.com/questions/14168677/merge-development-branch-with-master)
+
 #### Overwrite a branch with another branch
 
 ```

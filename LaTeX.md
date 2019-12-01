@@ -1,5 +1,15 @@
 # Mẹo sử dụng LaTeX
 
+## Cite không cần ngoặc
+
+Dùng lệnh `\newcite`
+
+Ví dụ:
+
+```
+~\newcite{li2014personal,hirano2015user}
+```
+
 ## Cách submit file pdf sinh ra bằng LaTeX lên arxiv
 
 Thêm vào dòng sau đây:
