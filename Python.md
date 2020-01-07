@@ -4,6 +4,30 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Tạo file môi trường cho các dự án
+
+```
+conda-env export > environment.yml
+pip freeze > requirements.txt
+```
+
+Khi đã có file môi trường, thực hiện các bước sau để thiết lập môi trường python
+
+```
+conda env create -f environment.yml
+source activate <tên_môi_trường>
+pip install -r requirements.txt
+```
+
+## Describe(x) function
+
+```
+def describe(x):
+    print("Type: {}".format(x.type()))
+    print("Shape/size: {}".format(x.shape))
+    print("Values: \n{}".format(x))
+```
+
 ## Cách vẽ Keras model
 
 ```

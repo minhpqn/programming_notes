@@ -4,6 +4,15 @@ Tạo bởi: Pham Quang Nhat Minh
 
 Ngày tạo: December 21, 2017
 
+## Bổ sung tokens đặc biệt trong tokenizer của transformers
+
+```
+tokenizer.add_tokens(['[E1]', [E2]])
+model = BertForSequenceClassification.from_pretrained("bert-base-uncased", num_labels=num_labels)
+# Tăng kích thước của embeddings của model
+model.resize_token_embeddings(len(tokenizer))
+```
+
 ## Using GPU efficiently
 
 "Keep in mind that it is expensive to move data back and forth from the GPU. Therefore, the typical procedure involves doing many of the parallelizable computations on the GPU and then transferring just the final result back to the CPU. This will allow you to fully utilize the GPUs."
