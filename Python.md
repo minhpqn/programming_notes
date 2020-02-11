@@ -4,6 +4,10 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Run selected code in PyCharm
+
+Chọn dòng/các dòng code muốn chạy và dùng tổ hợp phím "Shift+Alt+E"
+
 ## Tạo file môi trường cho các dự án
 
 ```
@@ -26,6 +30,16 @@ def describe(x):
     print("Type: {}".format(x.type()))
     print("Shape/size: {}".format(x.shape))
     print("Values: \n{}".format(x))
+```
+
+With option `print_value`
+
+```
+def describe(x, print_value=True):
+    print("Type: {}".format(x.type()))
+    print("Shape/size: {}".format(x.shape))
+    if print_value:
+        print("Values: \n{}".format(x))
 ```
 
 ## Cách vẽ Keras model

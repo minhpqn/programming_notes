@@ -4,6 +4,36 @@ Tạo bởi: Pham Quang Nhat Minh
 
 Ngày tạo: December 21, 2017
 
+## Check cuda version using torch
+
+```
+import torch
+torch.version.cuda
+```
+
+## Check if cuda available using torch
+
+```
+In [1]: import torch
+
+In [2]: torch.cuda.current_device()
+Out[2]: 0
+
+In [3]: torch.cuda.device(0)
+Out[3]: <torch.cuda.device at 0x7efce0b03be0>
+
+In [4]: torch.cuda.device_count()
+Out[4]: 1
+
+In [5]: torch.cuda.get_device_name(0)
+Out[5]: 'GeForce GTX 950M'
+
+In [6]: torch.cuda.is_available()
+Out[6]: True
+```
+
+Reference: [https://stackoverflow.com/questions/48152674/how-to-check-if-pytorch-is-using-the-gpu](https://stackoverflow.com/questions/48152674/how-to-check-if-pytorch-is-using-the-gpu)
+
 ## Bổ sung tokens đặc biệt trong tokenizer của transformers
 
 ```
@@ -25,6 +55,16 @@ def describe(x):
     print("Type: {}".format(x.type()))
     print("Shape/size: {}".format(x.shape))
     print("Values: \n{}".format(x))
+```
+
+With option `print_value`
+
+```
+def describe(x, print_value=True):
+    print("Type: {}".format(x.type()))
+    print("Shape/size: {}".format(x.shape))
+    if print_value:
+        print("Values: \n{}".format(x))
 ```
 
 ## Convert TensorFlow checkpoint for BERT to Pytorch saved file

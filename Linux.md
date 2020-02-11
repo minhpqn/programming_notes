@@ -2,6 +2,10 @@
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Show combined file size in Mac OS X
+
+Command + Option + I instead of Command + I
+
 ## NVIDIA NVML Driver/library version mismatch
 
 Tham khảo: [https://stackoverflow.com/questions/43022843/nvidia-nvml-driver-library-version-mismatch](https://stackoverflow.com/questions/43022843/nvidia-nvml-driver-library-version-mismatch)
