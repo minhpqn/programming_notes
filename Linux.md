@@ -2,6 +2,26 @@
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Cách SSH tới remote server sử dụng ngrok
+
+Xem hướng dẫn tại [https://medium.com/@byteshiva/ssh-into-remote-linux-by-using-ngrok-b8c49b8dc3ca](https://medium.com/@byteshiva/ssh-into-remote-linux-by-using-ngrok-b8c49b8dc3ca)
+
+## List files and sort by sizes
+
+```
+ls --sort=size -lh
+```
+
+hoặc
+
+```
+ls -S -lh
+```
+
+## Add public key để đăng nhập tự động
+
+Bổ sung SSH kay vào file `authorized_keys` trong thư mục `~/.ssh`
+
 ## Show combined file size in Mac OS X
 
 Command + Option + I instead of Command + I
@@ -62,6 +82,7 @@ lsb_release -a
 
 ```
 cat /usr/local/cuda/version.txt
+nvcc --version
 ```
 
 ## Vào một session cụ thể trong tmux

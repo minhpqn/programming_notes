@@ -4,6 +4,35 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Highlight unused import in VSCode
+
+```
+"python.linting.pylintEnabled": true,
+"python.linting.pylintArgs": [
+    "--enable=W0614"
+]
+```
+
+Reference: [https://stackoverflow.com/questions/53357649/detect-unused-imports-in-visual-studio-code-for-python-3/54082056](https://stackoverflow.com/questions/53357649/detect-unused-imports-in-visual-studio-code-for-python-3/54082056)
+
+## Check xem phiên bản Tensorflow nào tương thích với phiên bản Cuda nào
+
+```
+cat /usr/local/cuda/version.txt
+grep CUDNN_MAJOR -A 2 /usr/local/cuda/include/cudnn.h
+```
+
+Reference: [https://stackoverflow.com/questions/50622525/which-tensorflow-and-cuda-version-combinations-are-compatible](https://stackoverflow.com/questions/50622525/which-tensorflow-and-cuda-version-combinations-are-compatible)
+
+## Check cuda available with Tensorflow
+
+```
+import tensorflow as tf
+
+tf.test.is_gpu_available()
+tf.test.is_built_with_cuda()
+```
+
 ## Run selected code in PyCharm
 
 Chọn dòng/các dòng code muốn chạy và dùng tổ hợp phím "Shift+Alt+E"
