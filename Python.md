@@ -4,6 +4,24 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Randomize a DataFrame and drop duplicates
+
+Reference: [https://towardsdatascience.com/text-classification-with-state-of-the-art-nlp-library-flair-b541d7add21f](https://towardsdatascience.com/text-classification-with-state-of-the-art-nlp-library-flair-b541d7add21f)
+
+```
+data = pd.read_csv("./spam.csv", encoding='latin-1').sample(frac=1).drop_duplicates()
+```
+
+## Sử dụng argparse.Namespace
+
+```
+import argparse
+args = argparse.Namespace(
+  input="file_path",
+  output="file_path"
+)
+```
+
 ## Highlight unused import in VSCode
 
 ```

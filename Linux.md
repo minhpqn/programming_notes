@@ -2,6 +2,31 @@
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Set character encoding for shell
+
+```
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+```
+
+## Show the usage of GPU
+
+Cách 1:
+
+```
+# Show the window every 1 second
+nvidia-smi -l 1
+```
+
+Cách 2 (tốt hơn)
+
+```
+watch -d -n 1.0 nvidia-smi
+```
+
+Cập nhật cửa sổ sau 0.5 giây và không print liên tiếp trên terminal.
+
 ## Cách SSH tới remote server sử dụng ngrok
 
 Xem hướng dẫn tại [https://medium.com/@byteshiva/ssh-into-remote-linux-by-using-ngrok-b8c49b8dc3ca](https://medium.com/@byteshiva/ssh-into-remote-linux-by-using-ngrok-b8c49b8dc3ca)

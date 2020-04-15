@@ -6,7 +6,6 @@ Ngày tạo: 16/06/2019
 
 ## Biaffine classifier nghĩa là gì
 
-
 Ok, so I found an answer. What the papers meant with biaffine classifier is as follows. In neural networks, we have the usual transformation like Ax+b, where A is a matrix, or more conventionally Wx+b, where W is a weight matrix, x is an input vector and b is a bias.
 
 So this Wx+b transformation is an affine transformation, while if we apply another transformation to this namely W(Wx+b)+b, then this is an affine transformation applied twice. Hence, biaffine.

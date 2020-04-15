@@ -2,7 +2,7 @@
 
 Những ghi chép cá nhân khi sử dụng và học cách sử dụng Git cho các projects
 
-#### Merget dev branch into master
+#### Merge dev branch into master
 
 ```
 I generally like to merge master into the development first so that if there are any conflicts, I can resolve in the development branch itself and my master remains clean.
