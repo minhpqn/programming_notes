@@ -4,6 +4,40 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Copy file trong Python
+
+```
+import shutil
+shutil.copyfile('c:\\test_file.txt', 'c:\\test_file1.txt')
+```
+
+## Sort a DataFrame by column
+
+```
+df = df.sort_values('mpg')
+```
+
+## Xác định một xâu có chứa một xâu khác không?
+
+```
+astring = "abcdefg"
+astring.find("bcd")  # Return 1
+astring.find("ijk")  # Return -1
+```
+
+## Testing using nose and coverage
+
+Giả sử các test cases ở trong thư mục tests
+
+```
+nosetests -v --with-coverage --cover-package=src.citation --cover-inclusive --cover-erase -m tests
+```
+
+Xem thêm:
+
+- [Nose Unit Testing Quick Start](https://blog.jameskyle.org/2010/10/nose-unit-testing-quick-start/)
+- [Coverage](https://coverage.readthedocs.io/en/coverage-5.1/)
+
 ## Randomize a DataFrame and drop duplicates
 
 Reference: [https://towardsdatascience.com/text-classification-with-state-of-the-art-nlp-library-flair-b541d7add21f](https://towardsdatascience.com/text-classification-with-state-of-the-art-nlp-library-flair-b541d7add21f)
@@ -1063,6 +1097,7 @@ Sử dụng os.listdir()
 ```
 from os import listdir
 from os.path import isfile, join
+# onlyfiles = [f for f in listdir(mypath) if os.path.isfile(os.path.join(mypath, f))]
 onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
 ```
 

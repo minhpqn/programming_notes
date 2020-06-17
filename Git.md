@@ -2,6 +2,10 @@
 
 Những ghi chép cá nhân khi sử dụng và học cách sử dụng Git cho các projects
 
+#### How to Write a Git Commit Message
+
+Tham khảo: [https://chris.beams.io/posts/git-commit/](https://chris.beams.io/posts/git-commit/)
+
 #### Merge dev branch into master
 
 ```

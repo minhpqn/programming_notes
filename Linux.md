@@ -2,6 +2,14 @@
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Disable auto-title in zsh
+
+Thêm dòng `DISABLE_AUTO_TITLE=true` vào file `~/.zshrc`.
+
+## Set-up zsh shell
+
+[Jazz Up Your “ZSH” Terminal In Seven Steps — A Visual Guide](https://www.freecodecamp.org/news/jazz-up-your-zsh-terminal-in-seven-steps-a-visual-guide-e81a8fd59a38/)
+
 ## Set character encoding for shell
 
 ```
@@ -218,7 +226,7 @@ cat /usr/local/cuda/version.txt
 
 ## Exit broken ssh session
 
-Gõ Enter, ~, .
+Gõ `Enter, ~, .`
 
 Tham khảo: [https://askubuntu.com/questions/29942/how-can-i-break-out-of-ssh-when-it-locks](https://askubuntu.com/questions/29942/how-can-i-break-out-of-ssh-when-it-locks)
 
