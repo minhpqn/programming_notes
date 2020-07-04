@@ -4,6 +4,32 @@ Tạo bởi: Pham Quang Nhat Minh
 
 Ngày tạo: December 21, 2017
 
+## Freeze BERT layers for BertPretrainedModel
+
+```
+model = BertForSequenceClassification.from_pretrained("bert-base-uncase")
+for param in model.parameters():
+    param.requires_grad = False
+```
+
+## Average vector với bool masking
+
+Input:
+
+- Ma trận kích A thước B x L x D. Trong đó B là batch size, L là độ dài chuỗi và D là số chiều của word vector
+- Ma trận mask đánh dấu các vị trí trong chuỗi, kích thước B x L
+
+Output:
+
+- Ma trận kích thước B x D, trong đó mỗi vector hàng là mean vector trong của các word vectors trong A
+
+```
+# x is the input tensor
+# mask in the Boolean mask tensor
+for i in range(x.shape[0]):
+  mean_v[i] = torch.mean(x[i][mask[i]], dim=0)
+```
+
 ## Check cuda version using torch
 
 ```

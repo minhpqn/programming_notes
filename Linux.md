@@ -2,6 +2,14 @@
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Show all lines except the first line of a text file
+
+```
+sed '1d' file.txt
+```
+
+Tham khảo: [https://unix.stackexchange.com/questions/55755/print-file-content-without-the-first-and-last-lines](https://unix.stackexchange.com/questions/55755/print-file-content-without-the-first-and-last-lines)
+
 ## Disable auto-title in zsh
 
 Thêm dòng `DISABLE_AUTO_TITLE=true` vào file `~/.zshrc`.
