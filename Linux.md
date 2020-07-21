@@ -2,6 +2,15 @@
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Convert .mov to .mp4 with ffmpeg
+
+```
+ffmpeg -i my-video.mov -vcodec h264 -acodec mp2 my-video.mp4
+```
+
+Reference: [https://mrcoles.com/convert-mov-mp4-ffmpeg/](https://mrcoles.com/convert-mov-mp4-ffmpeg/)
+
+
 ## Show all lines except the first line of a text file
 
 ```

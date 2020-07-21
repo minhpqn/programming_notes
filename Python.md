@@ -4,6 +4,23 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Sử dụng autoreload trong ipython và notebook
+
+Thêm các dòng sau đây.
+
+```
+%load_ext autoreload
+%autoreload 2
+```
+
+## Viết giá trị của biến số trong string
+
+```
+a = 1
+b = 2
+print(f'{a} + {b} = {a+b}')
+```
+
 ## Copy file trong Python
 
 ```
