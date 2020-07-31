@@ -4,6 +4,10 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Temporary file trong Python
+
+Sử dụng module `tempfile`
+
 ## Sử dụng autoreload trong ipython và notebook
 
 Thêm các dòng sau đây.
