@@ -4,6 +4,12 @@ Tạo bởi: Phạm Quang Nhật Minh
 
 Ngày tạo: 16/06/2019
 
+## Lệnh Unix để thống kê tần suất xuất hiện của một cột trong file
+
+```
+cut -d ' ' -f 1 iden_split.txt | sort | uniq -c
+```
+
 ## Biaffine classifier nghĩa là gì
 
 Ok, so I found an answer. What the papers meant with biaffine classifier is as follows. In neural networks, we have the usual transformation like Ax+b, where A is a matrix, or more conventionally Wx+b, where W is a weight matrix, x is an input vector and b is a bias.

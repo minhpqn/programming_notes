@@ -4,6 +4,76 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Thực hiện biến đổi cho một cột của DataFrame
+
+```
+docs_df2 = docs_df[docs_df['general_category'].apply(lambda x: len(x)==1)]
+```
+
+## Train/test split cho data frame theo category
+
+```
+from sklearn.model_selection import train_test_split
+
+train, test, _, _ = train_test_split(df, df['label'],
+                               test_size=0.1, 
+                               random_state=42,
+                               stratify=df['label']
+                              )
+```
+
+## Xóa cột của DataFrame
+
+```
+df.drop(['col1', 'col2'])
+```
+
+## Random sample DataFrame cho mỗi loại giá trị tại một cột
+
+Tình huống: ta có bảng dữ liệu trong đó có cột label là nhãn
+của các data points. Ta muốn sample theo mỗi loại giá trị
+tại cột label.
+
+```
+seed = 42
+sample_size = 1000
+
+sample_df = df.groupby('label').apply(lambda s: s.sample(sample_size, random_state=seed))
+```
+
+## Đọc file json lớn
+
+Thư viện json thường không thể parse file json lớn (xảy ra lỗi out of memory). Để parse file json lớn, ta sẽ dùng thư viện dask.
+
+```
+import dask.bag as db
+import json
+
+docs = db.read_text(path_to_big_json_file).map(json.loads)
+```
+
+## Cách lấy ra file audio khi biết timestamp
+
+Sử dụng thư viện [pydub](https://github.com/jiaaro/pydub)
+
+```
+from pydub import AudioSegment
+t1 = t1 * 1000 #Works in milliseconds
+t2 = t2 * 1000
+newAudio = AudioSegment.from_wav("oldSong.wav")
+newAudio = newAudio[t1:t2]
+newAudio.export('newSong.wav', format="wav") #Exports to a wav file in the current path.
+```
+
+Reference: [How to split a .wav file into multiple .wav files?](https://stackoverflow.com/questions/37999150/how-to-split-a-wav-file-into-multiple-wav-files/43367691#43367691)
+
+## Lấy đường dẫn tuyệt đối (absolute path) trong Python
+
+```
+import os
+os.path.abspath(path)
+```
+
 ## Temporary file trong Python
 
 Sử dụng module `tempfile`

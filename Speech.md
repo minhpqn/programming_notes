@@ -4,6 +4,20 @@ Tác giả: Phạm Quang Nhật Minh
 
 Ngày tạo: 9/7/2020
 
+## Cách lấy ra file audio khi biết timestamp
+
+Sử dụng thư viện [pydub](https://github.com/jiaaro/pydub)
+
+```
+from pydub import AudioSegment
+t1 = t1 * 1000 #Works in milliseconds
+t2 = t2 * 1000
+newAudio = AudioSegment.from_wav("oldSong.wav")
+newAudio = newAudio[t1:t2]
+newAudio.export('newSong.wav', format="wav") #Exports to a wav file in the current path.
+```
+
+Reference: [How to split a .wav file into multiple .wav files?](https://stackoverflow.com/questions/37999150/how-to-split-a-wav-file-into-multiple-wav-files/43367691#43367691)
 
 ## Nhận input âm thanh bằng python
 
