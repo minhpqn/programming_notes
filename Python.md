@@ -4,6 +4,25 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Get file size:
+
+Reference: [https://thispointer.com/python-get-file-size-in-kb-mb-or-gb-human-readable-format/](https://thispointer.com/python-get-file-size-in-kb-mb-or-gb-human-readable-format/)
+
+```
+# get statistics of the file
+stat_info = os.stat(file_path)
+# get size of file in bytes
+size = stat_info.st_size
+```
+
+## Make exact copy of a conda environment
+
+```
+conda create --clone py35 --name py35-2
+```
+
+Tham khảo: [CONDA CHEAT SHEET](https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf)
+
 ## Thực hiện biến đổi cho một cột của DataFrame
 
 ```

@@ -2,6 +2,14 @@
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Change default shell to zsh
+
+```
+chsh -s $(which zsh)
+```
+
+Tham khảo: [https://askubuntu.com/questions/131823/how-to-make-zsh-the-default-shell](https://askubuntu.com/questions/131823/how-to-make-zsh-the-default-shell)
+
 ## Convert .mov to .mp4 with ffmpeg
 
 ```
