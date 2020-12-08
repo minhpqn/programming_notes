@@ -4,6 +4,88 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
+# Copy toàn bộ thư mục sang đường dẫn mới
+
+```
+from distutils.dir_util import copy_tree
+copy_tree(input_dir, output_dir)
+```
+
+## Tuple object không support item assignment
+
+Well noted!
+
+## Tạo thư mục bao gồm ngày tháng năm và giờ, phút hiện tại
+
+Tạo thư mục theo định dạng `<năm>_<tháng>_<ngày>_<giờ>_<phút>`
+
+```
+import os
+from datetime import datetime
+now = datetime.now()
+dt_string = now.strftime("%Y_%m_%d_%H_%M")
+os.makedirs(dt_string, exist_ok=True)
+```
+
+## Một số tips khi đọc file excel với pandas
+
+Tùy chọn header khi muốn chọn row nào làm header
+
+```
+import pandas as pd
+df = pd.read_excel(file_path, header=1)
+```
+
+Tham khảo: [How to Work with Excel files in Pandas](https://towardsdatascience.com/how-to-work-with-excel-files-in-pandas-c584abb67bfb)
+
+## matplotlib trong notebook
+
+```
+%matplotlibe inline
+```
+
+Vẽ đồ thị trong notebook nhưng không zoom.
+
+```
+%matplotlibe notebook
+```
+
+Vẽ đồ thị và zoom được trong notebook
+
+## Đánh giá hệ thống retrieval hoặc recommendation dùng Average Precision at K và MAP
+
+Dùng thư viện [ml_metrics](https://github.com/benhamner/Metrics)
+
+```
+import ml_metrics as metrics
+
+print(metrics.apk(range(1,6),[6,4,7,1,2], 2)) # 0.25
+print(metrics.apk(range(1,6),[6,4,7,1,2], 5)) # 0.32
+print(metrics.apk(range(1,6),[6,4,7,1,2], 4)) # 0.25
+```
+
+Tham khảo: [https://web.stanford.edu/class/cs276/handouts/EvaluationNew-handout-1-per.pdf](https://web.stanford.edu/class/cs276/handouts/EvaluationNew-handout-1-per.pdf)
+
+## Cách hiển thị Tensorboard từ remote server
+
+Tình huống: Hiển thị Tensorboard trên máy cá nhân từ thư mục log trên máy server.
+
+Cách làm: dùng port forwarding
+
+Khi ssh vào server dùng lệnh
+
+```
+ssh -L 16006:127.0.0.1:6006 olivier@my_server_ip
+```
+
+Sau đó khởi động Tensorboard trên server
+
+```
+tensorboard --logdir=runs
+```
+
+Tiếp đó truy cập vào `http://127.0.0.1:16006` trên máy local.
+
 ## Get file size:
 
 Reference: [https://thispointer.com/python-get-file-size-in-kb-mb-or-gb-human-readable-format/](https://thispointer.com/python-get-file-size-in-kb-mb-or-gb-human-readable-format/)
@@ -202,7 +284,7 @@ Chọn dòng/các dòng code muốn chạy và dùng tổ hợp phím "Shift+Alt
 ## Tạo file môi trường cho các dự án
 
 ```
-conda-env export > environment.yml
+conda env export > environment.yml
 pip freeze > requirements.txt
 ```
 

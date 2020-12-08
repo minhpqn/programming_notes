@@ -2,6 +2,23 @@
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Khắc phục lỗi Xid: 79, GPU has fallen off the bus
+
+Lỗi này là do GPU quá nóng. Có thể tạm khắc phục bằng cách setup `pcie_aspm=off`.
+
+Edit file `/etc/default/grub` và sửa dòng `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"`.
+
+Tham khảo: [https://askubuntu.com/questions/68372/how-do-i-add-pcie-aspm-force-to-my-boot-options](https://askubuntu.com/questions/68372/how-do-i-add-pcie-aspm-force-to-my-boot-options)
+
+
+## Cut cột đầu của một file để dán vào file khác
+
+```
+paste <(cut -f 2 o2.csv) g3temp.csv > tmp && mv tmp g3temp.csv
+```
+
+Tham khảo: [https://stackoverflow.com/questions/26753270/cut-column-from-some-file-1-paste-to-a-file-2-and-write-result-to-file-2](https://stackoverflow.com/questions/26753270/cut-column-from-some-file-1-paste-to-a-file-2-and-write-result-to-file-2)
+
 ## Change default shell to zsh
 
 ```

@@ -2,6 +2,22 @@
 
 Những ghi chép cá nhân khi sử dụng và học cách sử dụng Git cho các projects
 
+
+## Strikethrough trong Markdown
+
+Sử dụng `~~ ~~`
+
+Tham khảo: [Basic writing and formatting syntax](https://docs.github.com/en/free-pro-team@latest/github/writing-on-github/basic-writing-and-formatting-syntax)
+
+#### Autoreload
+
+Thêm 2 dòng dưới đây vào notebook khi muốn notebook tự động load những thay đổi trong các file.
+
+```
+%reload_ext autoreload
+%autoreload 2
+```
+
 #### How to Write a Git Commit Message
 
 Tham khảo: [https://chris.beams.io/posts/git-commit/](https://chris.beams.io/posts/git-commit/)
