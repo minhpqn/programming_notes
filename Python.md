@@ -4,7 +4,20 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
-# Copy toàn bộ thư mục sang đường dẫn mới
+## Code trên server ngay trên máy local với VSCode
+
+Tham khảo: [https://code.visualstudio.com/docs/remote/ssh-tutorial](https://code.visualstudio.com/docs/remote/ssh-tutorial)
+
+
+## Kiểm thử Python package đang phát triển mà không cần cài đặt
+
+Sử dụng:
+
+```
+python setup.py develop
+```
+
+## Copy toàn bộ thư mục sang đường dẫn mới
 
 ```
 from distutils.dir_util import copy_tree
