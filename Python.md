@@ -4,6 +4,93 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Convert data frame thành dictionary
+
+```
+id2data = df_topic.set_index('トピＩＤ').T.to_dict('dict')
+```
+
+## Đọc toàn bộ file excel vào workbook
+
+```
+from openpyxl import load_workbook
+
+wb = load_workbook(file_path, read_only=True)
+```
+
+## Mount Google Drive trên Google Colab và chuyển tới thư mục hiện tại
+
+```
+from google.colab import drive
+
+drive.mount('/content/gdrive')
+```
+
+## Flag to strip comments and white spaces
+
+Dùng flag (?x)
+
+
+## Đếm số lượng dòng theo giá trị của một nhãn trong DataFrame
+
+Dùng hàm `groupby` trong pandas.
+
+```
+df[['text','label']].groupby(['label']).agg(['count'])
+```
+
+## Check version of a Python package
+
+```
+# Cách 1
+package_name.__version__
+
+# Cách 2
+pip list | grep package_name
+
+# Cách 3
+pip freeze | grep package_name
+```
+
+## Xác định các giá trị unique của một cột trong data frame
+
+```
+df.name.unique()
+```
+
+## Concat nhiều data frame
+
+Vấn đề: có nhiều data frames với cùng cột, cần concat lại (theo chiều dọc) thành một data frame lớn
+
+```
+import pandas as pd
+
+
+# Use append
+df1.append(df2)
+
+# Or
+df1.append(df2, ignore_index=True)
+
+# Use concat
+pd.concat([df1, df2])
+
+# Or
+
+pd.concat([df1, df2], ignore_index=True)
+```
+
+Tham khảo: [https://stackoverflow.com/questions/41181779/merging-2-dataframes-vertically](https://stackoverflow.com/questions/41181779/merging-2-dataframes-vertically)
+
+## Download file từ Google Drive khi biết id
+
+```
+from google_drive_downloader import GoogleDriveDownloader as gdd
+gdd.download_file_from_google_drive(file_id="1kvyGf1jW5oiBiCwf8NFQTBQmmfz6heKZ",
+                                    dest_path="./preprocessed_data.zip",
+                                    unzip=True)
+```
+
 ## Code trên server ngay trên máy local với VSCode
 
 Tham khảo: [https://code.visualstudio.com/docs/remote/ssh-tutorial](https://code.visualstudio.com/docs/remote/ssh-tutorial)
