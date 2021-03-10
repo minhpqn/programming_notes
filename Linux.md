@@ -2,6 +2,14 @@
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Getting back old copy paste behaviour in tmux, with mouse
+
+```
+prefix : set -g mouse off
+```
+
+Tham khảo: [https://stackoverflow.com/questions/17445100/getting-back-old-copy-paste-behaviour-in-tmux-with-mouse](https://stackoverflow.com/questions/17445100/getting-back-old-copy-paste-behaviour-in-tmux-with-mouse)
+
 ## Khắc phục lỗi Xid: 79, GPU has fallen off the bus
 
 Lỗi này là do GPU quá nóng. Có thể tạm khắc phục bằng cách setup `pcie_aspm=off`.
