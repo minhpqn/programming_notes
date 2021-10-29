@@ -4,6 +4,104 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Cài đặt Pytorch trên RTX 3090
+
+Cài đặt torch bản 1.8.1+cu11 trên server với GPU RTX 3090
+
+```
+pip uninstall torchtext torch torchvision
+```
+
+Cài đặt pytorch 1.8.1+cu11
+
+```
+pip install torch==1.8.0+cu111 torchvision==0.9.0+cu111 torchaudio==0.8.0 -f https://download.pytorch.org/whl/torch_stable.html
+```
+
+Checking pytorch installation
+
+```
+# imports are always needed
+import torch
+
+# get index of currently selected device
+torch.cuda.current_device() # returns 0 in my case
+
+# get number of GPUs available
+torch.cuda.device_count() # returns 1 in my case
+
+# get the name of the device
+torch.cuda.get_device_name(0) # good old Tesla K80
+
+# Is PyTorch using a GPU?
+print(torch.cuda.is_available())
+```
+
+Tham khảo: [https://chrisalbon.com/code/deep_learning/pytorch/basics/check_if_pytorch_is_using_gpu/](https://chrisalbon.com/code/deep_learning/pytorch/basics/check_if_pytorch_is_using_gpu/)
+
+## Duyệt thư mục (recursively)
+
+```
+# !/usr/bin/python3
+import os
+
+os.chdir("d:\\tmp")
+for root, dirs, files in os.walk(".", topdown = False):
+   for name in files:
+      print(os.path.join(root, name))
+   for name in dirs:
+      print(os.path.join(root, name))
+```
+
+## Cài đặt package theo mode develop
+
+```
+python setup.py develop
+
+```
+
+## Convert từ Shift-JIS sang UTF-8
+
+Dùng nkf
+
+```
+nkf -w filename
+```
+
+Tham khảo:
+
+1. [nkfで文字コード変換](https://qiita.com/kentakozuka/items/d874a572ddf6cc34213f)
+2. [Python Interface to NKF](https://github.com/fumiyas/python-nkf)
+
+
+## pip install với editable mode
+
+```
+pip install -e (--editable)
+```
+
+So you would use this when trying to install a package locally, most often in the case when you are developing it on your system. It will just link the package to the original location, basically meaning any changes to the original package would reflect directly in your environment.
+
+Tham khảo: [https://stackoverflow.com/questions/35064426/when-would-the-e-editable-option-be-useful-with-pip-install](https://stackoverflow.com/questions/35064426/when-would-the-e-editable-option-be-useful-with-pip-install)
+
+## Lỗi 500 Internal server khi chạy jupyter notebook từ server
+
+```
+pip install nbconvert==5.4.1
+```
+
+Tham khảo: [https://github.com/jupyter/notebook/issues/3629](https://github.com/jupyter/notebook/issues/3629)
+
+## Iterate over lines from multiple input streams
+
+```
+import fileinput
+for line in fileinput.input():
+    process(line)
+```
+
+Tham khảo: [https://docs.python.org/3/library/fileinput.html](https://docs.python.org/3/library/fileinput.html)
+
 ## Convert data frame thành dictionary
 
 ```

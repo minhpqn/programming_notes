@@ -4,6 +4,7 @@ Tạo bởi: Pham Quang Nhat Minh
 
 Ngày tạo: December 21, 2017
 
+
 ## Freeze BERT layers for BertPretrainedModel
 
 ```
@@ -40,22 +41,18 @@ torch.version.cuda
 ## Check if cuda available using torch
 
 ```
-In [1]: import torch
+import torch
 
-In [2]: torch.cuda.current_device()
-Out[2]: 0
+torch.cuda.current_device()
 
-In [3]: torch.cuda.device(0)
-Out[3]: <torch.cuda.device at 0x7efce0b03be0>
+torch.cuda.device(0)
 
-In [4]: torch.cuda.device_count()
-Out[4]: 1
+torch.cuda.device_count()
 
-In [5]: torch.cuda.get_device_name(0)
-Out[5]: 'GeForce GTX 950M'
 
-In [6]: torch.cuda.is_available()
-Out[6]: True
+torch.cuda.get_device_name(0)
+
+torch.cuda.is_available()
 ```
 
 Reference: [https://stackoverflow.com/questions/48152674/how-to-check-if-pytorch-is-using-the-gpu](https://stackoverflow.com/questions/48152674/how-to-check-if-pytorch-is-using-the-gpu)

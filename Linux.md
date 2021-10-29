@@ -2,6 +2,89 @@
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Check encoding của file
+
+```
+file -i (trên Linux)
+file -I (OS X)
+
+```
+
+Tham khảo: [https://stackoverflow.com/questions/805418/how-can-i-find-encoding-of-a-file-via-a-script-on-linux](https://stackoverflow.com/questions/805418/how-can-i-find-encoding-of-a-file-via-a-script-on-linux)
+
+## Cách check domain đã đăng ký trên aws
+
+Tham khảo: [https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-view-status.html](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-view-status.html)
+
+## Nén file với password
+
+```
+zip -r -e  backend.zip  backend
+```
+
+## Cách extract file rar trên Linux
+
+Cài đặt unrar
+
+```
+sudo apt-get install unrar
+```
+
+Giải nén với unrar
+
+```
+unrar x file.rar
+```
+
+Tham khảo: [https://www.tecmint.com/how-to-open-extract-and-create-rar-files-in-linux/](https://www.tecmint.com/how-to-open-extract-and-create-rar-files-in-linux/)
+
+## Sort all directories based on their size
+
+```
+du -sh -- *  | sort -rh  # Files and directories, or
+du -sh -- */ | sort -rh  # Directories only
+```
+
+Tham khảo [https://unix.stackexchange.com/questions/106330/sort-all-directories-based-on-their-size](https://unix.stackexchange.com/questions/106330/sort-all-directories-based-on-their-size)
+
+## Trích ra x-megabytes đầu từ 1 file dữ liệu lớn
+
+Dùng `head -c` hoặc lệnh `dd`
+
+```
+# Lấy 1000 MB từ file ja.txt
+head -c 1000M ja.txt > ja1000M.txt
+# Dùng lệnh dd
+dd if=ja.txt count=1000 bs=1M > ja1000M.txt
+```
+
+Tham khảo: https://stackoverflow.com/questions/12221387/how-to-extract-the-first-x-megabyte-from-a-large-file-in-unix-linux
+
+## Xóa bớt một kí tự space trong cột thứ 2 bằng dòng lệnh
+
+Bài toán: có 1 file chia thành 2 cột cách nhau bằng dấu tab. Lập trình viên sơ ý nên đầu cột thứ 2 có thêm dấu space. Hãy xóa dấu space ở đầu của cột thứ 2 chỉ bằng lệnh trong Unix.
+
+Đầu vào:
+
+```
+η	 i
+ή	 ί
+ο	 o
+αμ	 a m
+αν	 a n
+```
+
+Đầu ra: vẫn 2 cột trên nhưng dấu space đã được xóa
+
+## Lấy content của file từ dòng thứ n
+
+```
+awk 'NR>4' file
+tail -n +10 file
+```
+
+Tham khảo: [https://stackoverflow.com/questions/25678863/how-to-display-all-the-lines-from-the-nth-line-of-a-file-in-unix](https://stackoverflow.com/questions/25678863/how-to-display-all-the-lines-from-the-nth-line-of-a-file-in-unix)
+
 ## Getting back old copy paste behaviour in tmux, with mouse
 
 ```

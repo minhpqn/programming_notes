@@ -2,6 +2,9 @@
 
 Những ghi chép cá nhân khi sử dụng và học cách sử dụng Git cho các projects
 
+## Cách xác thực qua personal tokens
+
+Tham khảo: [https://viblo.asia/p/git-go-bo-xac-thuc-mat-khau-phai-lam-sao-please-use-a-personal-access-token-instead-aWj53odb56m](https://viblo.asia/p/git-go-bo-xac-thuc-mat-khau-phai-lam-sao-please-use-a-personal-access-token-instead-aWj53odb56m)
 
 ## Strikethrough trong Markdown
 
