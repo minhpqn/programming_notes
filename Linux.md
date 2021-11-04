@@ -2,6 +2,12 @@
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Giải nén file tar.bz2
+
+```
+tar -xf archive.tar.bz2
+```
+
 ## Check encoding của file
 
 ```
