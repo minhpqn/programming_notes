@@ -4,6 +4,10 @@ Tác giả: Phạm Quang Nhật Minh
 
 Ngày tạo: 9/7/2020
 
+## Convert file mp3 về định dạng wav 16kHz
+
+
+
 ## ASR Evaluation với sclite
 
 Sử dụng tool: [https://github.com/usnistgov/SCTK](https://github.com/usnistgov/SCTK)

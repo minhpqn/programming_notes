@@ -2,6 +2,19 @@
 
 Tác giả: Phạm Quang Nhật Minh
 
+## List directory và sắp xếp theo size
+
+```
+du -h --max-depth=1 | sort -hr
+```
+
+Reference: [https://linuxconfig.org/list-all-directories-and-sort-by-size](https://linuxconfig.org/list-all-directories-and-sort-by-size)
+
+## Cách sử dụng soffice trên MAC OS X
+
+Tham khảo: [https://gist.github.com/minhpqn/20692891235cd5dfa46c0891682e31d9](https://gist.github.com/minhpqn/20692891235cd5dfa46c0891682e31d9)
+
+
 ## Giải nén file tar.bz2
 
 ```

@@ -4,6 +4,56 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Using variables in regex
+
+```
+import re
+x = 'a'
+y = 'b'
+re.search(f"({x}{y})+", 'abab')
+```
+
+## Regex \1
+
+Để check xem chuỗi có ít nhất 2 kí tự giống nhau liền nhau không
+
+```
+import re
+re.search(r'(.)\1', 'BBBBB')
+```
+
+## Shuffle data frame
+
+Sample dataframe
+
+```
+df.sample(frac=1)
+```
+
+Tham khảo: [https://stackoverflow.com/questions/29576430/shuffle-dataframe-rows](https://stackoverflow.com/questions/29576430/shuffle-dataframe-rows)
+
+
+## Lấy ra requirement cần thiết cho project
+
+[https://pypi.org/project/pipreqsnb/](https://pypi.org/project/pipreqsnb/)
+
+```
+pip install pipreqs
+
+$ pipreqs /home/project/location
+Successfully saved requirements file in /home/project/location/requirements.txt
+```
+
+## Thiết lập để giá trị của tùy chọn bằng False khi sử dụng
+
+Sử dụng `action="store_false"` thay vì `action="store_true"`
+
+```
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument("--option", action="store_false")
+```
+
 ## Cài đặt Pytorch trên RTX 3090
 
 Cài đặt torch bản 1.8.1+cu11 trên server với GPU RTX 3090
