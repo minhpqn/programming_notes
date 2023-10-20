@@ -4,7 +4,6 @@ Tạo bởi: Pham Quang Nhat Minh
 
 Ngày tạo: December 21, 2017
 
-
 ## Freeze BERT layers for BertPretrainedModel
 
 ```

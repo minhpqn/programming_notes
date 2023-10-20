@@ -4,6 +4,14 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Ghi nội dung của code cell trong Jupyter Notebook vào file
+
+Dùng lệnh `%%writefile`
+
+```
+%%writefile bert-jp-precompile.py
+```
+
 ## Using variables in regex
 
 ```

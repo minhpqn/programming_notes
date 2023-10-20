@@ -2,6 +2,31 @@
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Xử lý khi mount phân vùng chưa được format
+
+Thông báo lỗi
+
+```
+mount: wrong fs type, bad option, bad superblock on /dev/sdb,
+       missing codepage or helper program, or other error
+       In some cases useful info is found in syslog - try
+       dmesg | tail  or so
+```
+
+Xử lý như sau:
+
+```
+mkfs -t ext4 /dev/sdb1
+```
+
+Tham khảo: https://ex1.m-yabe.com/archives/3457
+
+## Xác định version của ubuntu
+
+```
+lsb_release -a
+```
+
 ## List directory và sắp xếp theo size
 
 ```
