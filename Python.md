@@ -4,6 +4,34 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Shortcut key để mở Terminal trong VSCode
+
+Trong MacOS: Control + Shift + ``
+
+## Check một string có kết thúc bằng một string khác không?
+
+```
+x = txt.endswith(".")
+```
+
+## Ghi dữ liệu JSON thành file theo format đẹp
+
+Câu trả lời bằng ChatGPT
+
+```
+import json
+
+data = {
+    "name": "ChatGPT",
+    "capabilities": ["text", "images", "audio"],
+    "version": 4.0
+}
+
+# Ghi dữ liệu vào file với format đẹp
+with open("data.json", "w", encoding="utf-8") as f:
+    json.dump(data, f, ensure_ascii=False, indent=2)
+```
+
 ## Ghi nội dung của code cell trong Jupyter Notebook vào file
 
 Dùng lệnh `%%writefile`
@@ -239,6 +267,8 @@ pd.concat([df1, df2], ignore_index=True)
 Tham khảo: [https://stackoverflow.com/questions/41181779/merging-2-dataframes-vertically](https://stackoverflow.com/questions/41181779/merging-2-dataframes-vertically)
 
 ## Download file từ Google Drive khi biết id
+
+Sử dụng [Google Drive Downloader](https://github.com/ndrplz/google-drive-downloader)
 
 ```
 from google_drive_downloader import GoogleDriveDownloader as gdd
@@ -1378,7 +1408,7 @@ test_var_args(1, "two", 3)
 ## Delete an python environment with conda
 
 ```
-conda env remove -n <name_of_env>
+conda remove --name ENV_NAME --all
 ```
 
 ## Show python environments with conda

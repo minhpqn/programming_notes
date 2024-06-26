@@ -4,6 +4,37 @@ Tạo bởi: Pham Quang Nhat Minh
 
 Ngày tạo: December 21, 2017
 
+## Tải dữ liệu về từ HuggingFace datasets
+
+```
+from datasets import load_dataset
+dataset = load_dataset("elyza/ELYZA-tasks-100")
+```
+
+## Load dữ liệu với datasets
+
+Tham khảo [https://huggingface.co/docs/datasets/en/loading](https://huggingface.co/docs/datasets/en/loading)
+
+Có thể load dữ liệu từ pandas
+
+```
+from datasets import Dataset
+import pandas as pd
+df = pd.DataFrame({"a": [1, 2, 3]})
+dataset = Dataset.from_pandas(df)
+```
+
+## Object Data Collator
+
+[Data Collator](https://huggingface.co/docs/transformers/en/main_classes/data_collator) are objects that will form a batch by using a list of dataset elements as input. These elements are of the same type as the elements of train_dataset or eval_dataset.
+
+## Thư viện evaluate
+
+[https://github.com/huggingface/evaluate](https://github.com/huggingface/evaluate)
+
+- Có thể đánh giá các mô hình học máy
+- Có thể dễ dàng publish kết quả lên Hugging Face Hub.
+
 ## Freeze BERT layers for BertPretrainedModel
 
 ```

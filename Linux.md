@@ -2,6 +2,55 @@
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Xác định các phân vùng chưa được mount
+
+Sử dụng một trong các lệnh sau:
+
+```
+lsblk
+```
+
+Hoặc
+
+```
+sudo fdisk -l
+```
+
+
+## Thiết lập để mount ổ cứng tự động
+
+Thêm dòng sau vào file `/etc/fstab`
+
+```
+/dev/nvme2n1  /mnt/disk1 ext4  defaults  0  2
+```
+
+Có thể thay tên thiết bị bằng UUID tương ứng
+
+```
+UUID=xxxx-xxxx  /mnt/disk1  ext4  defaults  0  2
+```
+
+Xác định UUID của thiết bị bằng một trong các lệnh sau
+
+```
+lsblk -f
+```
+
+hoặc
+
+```
+sudo blkid
+```
+
+
+## Permission đúng của file pem
+
+```
+chmod 400 path/to/pem/file
+chmod 600 path/to/pem/file
+```
+
 ## Xử lý khi mount phân vùng chưa được format
 
 Thông báo lỗi
