@@ -2,6 +2,51 @@
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Shutdown server
+
+```
+shutdown now
+```
+
+## Cài đặt để ssh bằng public key và không cần password
+
+Edit file sshd_config
+
+```
+sudo emacs /etc/ssh/sshd_config
+```
+
+Tìm và set các giá trị sau trong file trên
+
+```
+PubkeyAuthentication yes
+AuthorizedKeysFile .ssh/authorized_keys
+PasswordAuthentication no
+```
+
+Restart the SSH daemon
+
+```
+sudo systemctl restart sshd
+```
+
+## Cài đặt để thực thi lệnh sudo không cần nhập password
+
+Sử dụng lệnh sau đây
+
+```
+sudo visudo
+```
+
+Thêm dòng sau vào cuối file
+
+```
+username ALL=(ALL) NOPASSWD:ALL
+```
+
+Trong đó thay username bằng tên user thực tế.
+
+
 ## Xác định các phân vùng chưa được mount
 
 Sử dụng một trong các lệnh sau:
@@ -15,7 +60,6 @@ Hoặc
 ```
 sudo fdisk -l
 ```
-
 
 ## Thiết lập để mount ổ cứng tự động
 

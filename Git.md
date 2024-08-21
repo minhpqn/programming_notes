@@ -2,6 +2,16 @@
 
 Những ghi chép cá nhân khi sử dụng và học cách sử dụng Git cho các projects
 
+## Xử lý lỗi fatal: the remote end hung up unexpectedly
+
+Thực hiện lệnh
+
+```
+git config http.postBuffer 524288000
+```
+
+Tham khảo: [https://stackoverflow.com/questions/15240815/git-fatal-the-remote-end-hung-up-unexpectedly](https://stackoverflow.com/questions/15240815/git-fatal-the-remote-end-hung-up-unexpectedly)
+
 ## Cách xác thực qua personal tokens
 
 Tham khảo: [https://viblo.asia/p/git-go-bo-xac-thuc-mat-khau-phai-lam-sao-please-use-a-personal-access-token-instead-aWj53odb56m](https://viblo.asia/p/git-go-bo-xac-thuc-mat-khau-phai-lam-sao-please-use-a-personal-access-token-instead-aWj53odb56m)

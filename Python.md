@@ -4,6 +4,28 @@ Ghi chép cá nhân khi học và sử dụng ngôn ngữ lập trình Python.
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Encode ảnh thành dạng base64
+
+```
+import base64
+
+# Function to encode the image
+def encode_image(image_path):
+  with open(image_path, "rb") as image_file:
+    return base64.b64encode(image_file.read()).decode('utf-8')
+
+```
+
+Tham khảo cách encoding của base64 trên trang: [https://en.wikipedia.org/wiki/Base64](https://en.wikipedia.org/wiki/Base64)
+
+## Cài đặt OpenAI Python Library
+
+```
+pip install openai
+```
+
+Tham khảo [https://platform.openai.com/docs/libraries/python-library](https://platform.openai.com/docs/libraries/python-library)
+
 ## Shortcut key để mở Terminal trong VSCode
 
 Trong MacOS: Control + Shift + ``
