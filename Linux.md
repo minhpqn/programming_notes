@@ -2,6 +2,20 @@
 
 Tác giả: Phạm Quang Nhật Minh
 
+## Cách copy để đồng bộ 2 thư mục
+
+Có 2 thư mục A, B trong đó có các sub-folder trong B trùng tên với A. Tôi merge nội dung từ B vào A và không ghi đè các thư mục trùng tên.
+
+Sử dụng lệnh `rsync`
+
+```
+rsync -av --ignore-existing B/ A/
+```
+
+Chú ý:
+- Tùy chọn `--ignore-existing` để không ghi đè các file đã có trong A
+- Các dấu `/` quan trọng vì nó sẽ chỉ định lệnh `rsync` merge nội dung B với A chứ không lưu dữ liệu B vào thư mục con trong A.
+
 ## Shutdown server
 
 ```
